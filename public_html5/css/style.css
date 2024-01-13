@@ -1,0 +1,142 @@
+
+/*rgba(7, 15, 29, 0.849);*/
+/*rgba(43, 56, 73, 0.849);*/
+
+
+
+
+.usa-button {
+   font-family: 'Source Sans 3';
+   font-size:  1.0vw;
+   line-height: .9;
+   color: #fff;
+   background-color: var(--accent-color-1);
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   appearance: none;
+   border: 0;
+   border-radius: .25rem;
+   cursor: pointer;
+   display: inline-block;
+   font-weight: 700;
+   margin-right: .5rem;
+   padding: 1rem 5rem;
+   text-align: center;
+   text-decoration: none;
+}
+
+.body-text-homepage {
+   
+   display: flex;
+   align-content: flex-start;
+   flex-direction: column;
+   h1,p,ul { margin:1.2rem; }
+   h1 {
+      font-size: 3rem;
+   }
+
+
+   p {
+      font-size: 2rem;
+      
+   }
+
+
+
+   ul {
+      /* color:red; */
+      line-height: 3rem;
+      font-size: 1.5rem;
+   }
+}
+
+/* div img[src*=DSAA] {
+   /* background-color: var(--primary-color);
+}*/
+
+
+.icon-join-box {
+   display: flex;
+   align-items: center;
+}
+
+/* When adding a special alert */
+.boxed-text {
+   display: flex;
+   margin-right: 10rem;
+   margin-left: 10rem;
+   padding: 0.15rem;
+   background-color: #8080802a;
+   border-left: 1rem solid #c2cac0;
+   color: grey;
+   flex-direction: column;
+   align-items: baseline;
+   p{
+      font-size: 1.2rem !important;
+   }
+
+}
+
+
+
+table.dataTable.no-footer{
+   border-bottom:0px !important;
+}
+
+.dataTable.no-footer{
+   /* margin: 2rem 2rem 2rem 0 ; */
+   margin-bottom: 2rem;
+
+
+  /* background-color: rgb(255, 255, 255); */
+  width: 70%;
+  font-size: 2rem;
+
+  table{
+     border-bottom: 0px;
+
+  }
+   
+  td {
+   border-bottom: 1px solid var(--accent-border-grey);
+  }
+
+  .register_button_table {
+
+      font-family: 'Public Sans';
+
+      font-size: 1.5rem;
+      line-height: .9;
+      color: #fff;
+      background-color: var(--accent-color-1);
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      border: 0;
+      border-radius: .25rem;
+      cursor: pointer;
+      display: inline-block;
+      font-weight: 700;
+      margin-right: .5rem;
+      padding: 1rem 5rem;
+      text-align: center;
+      text-decoration: none;
+  }
+}
+
+
+
+
+
+.vspacer-1 {
+   height: 6rem;
+}
+
+
+
+
+/* -------------------------------------------------------------------------- */
+/* -------------------------------------------------------------------------- */
+
+
+
