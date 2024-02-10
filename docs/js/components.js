@@ -73,13 +73,13 @@ const navigations = {
      * currentpageTitle - if this property matches the current documents title, it styles that list item with active-navigation-item
      */
     teens : [
-        {display:'Teen Driving Courses',    link:'teens-home.html',                 currentpageTitle:'Ohio Teen Drivers Education'},
+        
+        {display:'Teen Drivers Education',    link:'teens-home.html',                 currentpageTitle:'Ohio Teen Drivers Education'},
         {display:'Classroom Locations',     link:'teens-locations.html',            currentpageTitle:'Ohio Classroom Locations'},
         {display:'High School Classes',     link:'teens-highschool-classes.html',   currentpageTitle:'Ohio High School Drivers Ed'},
         {display:'Virtual Classes',         link:'teens-virtual-classes.html',      currentpageTitle:'Ohio Virtual Driving Classes'},
         {display:'Online Classes',          link:'teens-online-classes.html',       currentpageTitle:'Ohio Online Drivers Ed'},
-        {display:'Behind the Wheel',        link:'teens-btw.html',                  currentpageTitle:'Ohio Behind the Wheel Training'},
-        {display:'Course Documents',        link:'teens-documents.html',            currentpageTitle:'Course Documents'}
+        {display:'Behind the Wheel',        link:'teens-btw.html',                  currentpageTitle:'Ohio Behind the Wheel Training'}
     ],
     adults : [
         {display:'Adult Driving Courses',link:'adults-home.html',currentpageTitle:'Adult Driving Courses'},
