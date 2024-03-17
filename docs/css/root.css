@@ -13,6 +13,7 @@
     --accent-border-grey : #cccccc;
 
     --carbon_fiber : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAQAAAC/mnxTAAAAIUlEQVR4AWPc7sywl4GBgUSScTsD6YBsbYPNkaOOHHUkALSqN8mc6mmTAAAAAElFTkSuQmCC");
+    
     --black         : #1b1b1b;
     --text-black    : #000000cc;
     --dark-grey: #71767a;
@@ -21,6 +22,8 @@
     --grey1    : #F0F0F0;
     --grey2    : #FCFCFC;
     --warm-light    : #dfdfdf;
+    --white-tinted:#fefff7;
+    --yellow: #ffc810;
 
     /* -------------------------------------------------------------------------- */
     --font1 : 'Public Sans';
@@ -57,6 +60,10 @@
 
 }
 
+
+*{
+  box-sizing: border-box;
+}
 html{
   font-size: 62.5%;
   font-family: var(--font2)!important;

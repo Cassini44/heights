@@ -7,20 +7,9 @@
     padding: vw;
     display: grid;
     grid-template-columns: 0.7fr 2.3fr 0.5fr;
-
-
-
     gap: 1rem;
+
     
- 
-    /* Just for debugging */
-    
-
-    .grid3col-col1 {
-        /*  */
-    }
-
-
     .grid3col-col2 {
         border: 1px solid var(--accent-border-grey);
 
@@ -58,27 +47,29 @@
 
     .sidebar-navigation{
 
+
+
         h2 {
             text-align: center;
             font-style: italic;
             color: rgb(117, 117, 117);
          }
-         ul{
+        ul{
             margin-top:5rem;
-    
             margin-left: 0rem;
             font-family: 'Source sans 3';
             line-height: 5rem;
             font-size: 2rem;
             list-style-type: none;
             .material-icons {
-               font-size:1.5rem;
+                font-size:1.5rem;
             }
             li div {
-               display: flex;
-               align-items: center;
+                display: flex;
+                align-items: center;
             }
             li{
+                
                 cursor: pointer;
                 box-sizing: border-box;
                 padding-left:0.5rem;
@@ -87,13 +78,19 @@
             li:hover {
                 background-color: #d0daeb71;
             }
-            li.active-navigation-item{
+
+            li.active-navigation-item{ /* active navigation item */
                 border-left:0.5rem solid var(--accent-color-3);
+                font-weight: 700;
+            }
+            
+            li.sub-navigation-item{
+                /* font-weight:normal; */
+                font-size: 1.8rem;
             }
             a{
                 width:100%;
                 display: block;
-               
             }
             
             
@@ -109,10 +106,6 @@
         display:grid;
         grid-template-rows: 35rem 35rem 35rem;
 
-        
-
-
-
         .location-container{
             display: grid;
             grid-template-columns: 1.2fr 10rem 1fr;
@@ -124,12 +117,10 @@
 
             
            
-            
          
         }
     }
 }
-
 
 
 /*General scheme for body of a page*/

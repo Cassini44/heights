@@ -53,15 +53,28 @@ const tables = {
 
 const navigations = {
     /**
+     * ---
+     * @description Used for keeping consistent naviagtions across the website
      * 
-     * @param {string} nav_type as defined in navigations, use the property that represents the menu item set
-     * @returns string
+     * Contact nyden1414@gmail.com if you need any more info on this
+     * @param {string} nav_type As defined in navigations, use the property that represents the menu item set
+     * @param {boolean} isHeaders tells the script that this navigation exists in the header and thus has a parent element already with that link
+     * @returns HTML string
      */
-    generateNavigation(nav_type) {
-        var page_title = document.title
+    generateNavigation(nav_type,isHeaders) {
+
+         /* The title of the html page should have a coresponding entry in one of the objects currentpageTitle properties
+            If the entry matches the current page title, it assigns a class that highlights that menu entry to show the user is currently on that page
+         */ 
+        var page_title = document.title 
 
         let nav = navigations[nav_type].reduce((acc,v) => {
-            acc+=`<li class="${v.currentpageTitle === page_title?'active-navigation-item':''}"><a href="${v.link}">${v.display}</a></li>`
+            if(isHeaders && v.isHome){return acc} // This prevents the menu in the header from containing the 'home' link, since its accesbile by clicking on the menus parent element
+            var isactive = v.currentpageTitle === page_title?'active-navigation-item':''
+            var subnav = (!v.isHome) && (!isHeaders) ? 'sub-navigation-item' : ''
+
+            
+            acc+=`<li class="${isactive} ${subnav}"><a href="${v.link}">${v.display}</a></li>`
             return acc
         },'')
         return `<ul>${nav}</ul>`
@@ -74,7 +87,7 @@ const navigations = {
      */
     teens : [
         
-        {display:'Teen Drivers Education',    link:'teens-home.html',                 currentpageTitle:'Ohio Teen Drivers Education'},
+        {display:'Teen Drivers Education',    link:'teens-home.html',                 currentpageTitle:'Ohio Teen Drivers Education',isHome:true},
         {display:'Classroom Locations',     link:'teens-locations.html',            currentpageTitle:'Ohio Classroom Locations'},
         {display:'High School Classes',     link:'teens-highschool-classes.html',   currentpageTitle:'Ohio High School Drivers Ed'},
         {display:'Virtual Classes',         link:'teens-virtual-classes.html',      currentpageTitle:'Ohio Virtual Driving Classes'},
@@ -82,30 +95,30 @@ const navigations = {
         {display:'Behind the Wheel',        link:'teens-btw.html',                  currentpageTitle:'Ohio Behind the Wheel Training'}
     ],
     adults : [
-        {display:'Adult Driving Courses',link:'adults-home.html',currentpageTitle:'Adult Driving Courses'},
-        {display:'Abreviated Course',link:'adults-abreviated.html',currentpageTitle:'Adult Driving Courses'},
-        {display:'Remedial Program',link:'adults-remedial.html',currentpageTitle:'Classroom Locations'},
-        {display:'Adult Driving Lessons',link:'adults-lessons.html',currentpageTitle:'Classroom Locations'}
+        {display:'Adult Driving Courses',link:'adults-home.html',currentpageTitle:'Ohio Adult Driving Courses',isHome:true},
+        {display:'Abreviated Program',link:'adults-abreviated.html',currentpageTitle:'Ohio Adult Abbreviated Program'},
+        {display:'Remedial Program',link:'adults-remedial.html',currentpageTitle:'Ohio Adult Remedial Program'},
+        {display:'Driving Lessons',link:'adults-lessons.html',currentpageTitle:'Ohio Adult Driving Lessons'}
 
 
     ],
     disabilities : [
-        {display:'Disabilities and Driving',link:'disabilities-home.html',currentpageTitle:'Disabilities and Driving'},
-        {display:'ADHD/ADD',link:'disabilities-home.html',currentpageTitle:'Driving with ADHD/ADD'},
-        {display:'Autism',link:'disabilities-home.html',currentpageTitle:'Driving with Autism'},
-        {display:'Amputation',link:'disabilities-home.html',currentpageTitle:'Driving after Amputation'},
-        {display:'Arthritis',link:'disabilities-home.html',currentpageTitle:'Driving with Arthritis'},
-        {display:'Bioptics-Low Vision',link:'disabilities-home.html',currentpageTitle:'Driving with Bioptics-Low Vision'},
-        {display:'Cerebral Palsy',link:'disabilities-home.html',currentpageTitle:'Driving with Cerebral Palsy'},
-        {display:'Working with the Deaf',link:'disabilities-home.html',currentpageTitle:'Driving with Deafness'},
-        {display:'Multiple Sclerosis',link:'disabilities-home.html',currentpageTitle:'Driving with Multiple Sclerosis'},
-        {display:'Spina Bifida',link:'disabilities-home.html',currentpageTitle:'Driving with Spina Bifida'},
-        {display:'Spinal Cord Injury',link:'disabilities-home.html',currentpageTitle:'Driving with a Spinal Cord Injury'},
-        {display:'Stroke',link:'disabilities-home.html',currentpageTitle:'Driving after a Stroke'},
-        {display:'Traumatic Brain Injury',link:'disabilities-home.html',currentpageTitle:'Driving after a Traumatic Brain Injury'}
+        {display:'Disabilities and Driving' ,link:'disabilities-home.html',currentpageTitle:'Disabilities and Driving',isHome:true},
+        {display:'ADHD/ADD'                 ,link:'disabilities-adhd.html',currentpageTitle:'Driving with ADHD/ADD'},
+        {display:'Autism'                   ,link:'disabilities-autism.html',currentpageTitle:'Driving with Autism'},
+        {display:'Amputation'               ,link:'disabilities-amputees.html',currentpageTitle:'Driving after Amputation'},
+        {display:'Arthritis'                ,link:'disabilities-arthritis.html',currentpageTitle:'Driving with Arthritis'},
+        {display:'Bioptics'      ,link:'disabilities-bioptics.html',currentpageTitle:'Driving with Bioptics'},
+        {display:'Cerebral Palsy'           ,link:'disabilities-cerebral-palsy.html',currentpageTitle:'Driving with Cerebral Palsy'},
+        {display:'Working with the Deaf'    ,link:'disabilities-deafness.html',currentpageTitle:'Driving while Deaf'},
+        {display:'Multiple Sclerosis'       ,link:'disabilities-ms.html',currentpageTitle:'Driving with Multiple Sclerosis'},
+        {display:'Spina Bifida'             ,link:'disabilities-spina-bifida.html',currentpageTitle:'Driving with Spina Bifida'},
+        {display:'Spinal Cord Injury'       ,link:'disabilities-spinal-cord-injury.html',currentpageTitle:'Driving with a Spinal Cord Injury'},
+        {display:'Stroke'                   ,link:'disabilities-stroke.html',currentpageTitle:'Driving after a Stroke'},
+        {display:'Traumatic Brain Injury'   ,link:'disabilities-tbi.html',currentpageTitle:'Driving after a Traumatic Brain Injury'}
     ],
     seniors : [
-        {display:'Aging and Driving',link:'seniors-home.html',currentpageTitle:'Aging and Driving'}
+        {display:'Aging and Driving',link:'seniors-home.html',currentpageTitle:'Aging and Driving',isHome:true}
 
     ]
 }
@@ -125,19 +138,19 @@ const core_components = {
             <ul>
                 
                 
-                <li class="menu-top"><a class="navigation-menu-item">Teens</a>
-                    ${navigations.generateNavigation('teens')}
+                <li class="menu-top"><a href="teens-home.html" class="navigation-menu-item">Teens </a>
+                    ${navigations.generateNavigation('teens',true)}
                 </li>
-                <li class="menu-top"><a class="navigation-menu-item">Adults</a>
-                    ${navigations.generateNavigation('adults')}
+                <li class="menu-top"><a href="adults-home.html" class="navigation-menu-item">Adults</a>
+                    ${navigations.generateNavigation('adults',true)}
                 </li>
-                <li class="menu-top"><a class="navigation-menu-item">Disabilities</a>
-                    ${navigations.generateNavigation('disabilities')}
+                <li class="menu-top"><a href="disabilities-home.html" class="navigation-menu-item">Disabilities</a>
+                    ${navigations.generateNavigation('disabilities',true)}
                 </li>
-                <li class="menu-top"><a class="navigation-menu-item">Seniors</a>
-                    ${navigations.generateNavigation('seniors')}
+                <li class="menu-top"><a href="seniors-home.html" class="navigation-menu-item">Seniors</a>
+                    ${navigations.generateNavigation('seniors',true)}
                 </li>
-                <li class="menu-top"><a class="navigation-menu-item">Helpful Information</a>
+                <li class="menu-top"><a href="teens-home.html" class="navigation-menu-item">Helpful Information</a>
                     <ul>
                         <li ><a href="#">Option 1</a></li>
                     </ul>
@@ -150,7 +163,9 @@ const core_components = {
            
 
         </nav>
-        <button onclick="location.replace('login.html')"class="usa-button"><div class="icon-join-box"><span class="material-icons">login</span> Log In </div></button>
+        <button id="login-button-text" onclick="location.replace('login.html')"class="login-button"><div class="icon-join-box"><span class="material-icons">login</span> Log In </div></button>
+
+        <button id="login-button-no-text" onclick="location.replace('login.html')"class="login-button"><div class="icon-join-box"><span class="material-icons">login</span></div></button>
     `,
     footer: `
         
@@ -200,7 +215,7 @@ const core_components = {
             </div>
         </div>
         <div class="footer-4">
-            <span>© 1999 - 2023 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
+            <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
         </div>
     `
 

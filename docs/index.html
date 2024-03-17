@@ -7,7 +7,8 @@
 
 <head>
 
-    
+    <!-- ------------------[git add .]-------------------------------- -->
+    <!-- ------------------[ git commit -m "" --allow-empty-message]-------------------------------- -->
     <title>Teen, Adult, Remedial, Disabilities, Senior Evaluation, Drivers Education, Cleveland | Heights Driving School </title>
     <link rel="icon" type="x-icon" sizes="any" href="images/heights_favicon.svg">
     
@@ -19,16 +20,17 @@
     <script>WebFont.load({google: {families:['Public Sans', 'Source Sans 3','Roboto']}});</script>
     <style>
         :root {
-        --grid-main-rows-total: 100;
+        --grid-main-rows-total: 90;
         --c-grid: repeat(var(--grid-main-rows-total),2rem);
+        
         --c-grid-header-rows : 5;
-        --c-grid-hero-rows   : 35;
+        --c-grid-banner-rows   : 25;
         --c-grid-body-rows   : 45;
         --c-grid-footer-rows : 16;
         --c-grid-header: 1/var(--c-grid-header-rows);
-        --c-grid-hero: var(--c-grid-header-rows) /   calc( var(--c-grid-hero-rows) + var(--c-grid-header-rows));
-        --c-grid-body:   calc( var(--c-grid-hero-rows) + 2 + var(--c-grid-header-rows)) / calc( var(--c-grid-hero-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows));
-        --c-grid-footer: calc( var(--c-grid-hero-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows)) / calc( var(--c-grid-hero-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows) + var(--c-grid-footer-rows));
+        --c-grid-banner: var(--c-grid-header-rows) /   calc( var(--c-grid-banner-rows) + var(--c-grid-header-rows));
+        --c-grid-body:   calc( var(--c-grid-banner-rows) + 2 + var(--c-grid-header-rows)) / calc( var(--c-grid-banner-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows));
+        --c-grid-footer: calc( var(--c-grid-banner-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows)) / calc( var(--c-grid-banner-rows) + var(--c-grid-header-rows) + var(--c-grid-body-rows) + var(--c-grid-footer-rows));
         --card-image-width : 40rem;
     }
     </style>
@@ -60,35 +62,91 @@
         <hds-header></hds-header>
 
 
-        <div id="c-hero" class="hero-grid">
+        <div id="c-banner" class="banner-grid">
 
 
-            <div id="hero-image">
-                <h1 class="title-image-overlay">Driver’s Courses for all needs</h1>
+            <div id="banner-title">
+                <h1 class="title-image-overlay">
+                    Driver’s Courses for All Needs
+                    
 
-                <!-- <img fetchpriority="high" decoding="async" width="2560" height="1702" class="banner" alt="" 
-                        src="images/2023-07-iStock-961805314-scaled.jpg" 
-                        data-object-fit="cover" 
-                        srcset="
-                        images/2023-07-iStock-961805314-scaled.jpg 2560w, 
-                        images/2023-07-iStock-961805314-300x199.jpg 300w, 
-                        images/2023-07-iStock-961805314-1024x681.jpg 1024w, 
-                        images/2023-07-iStock-961805314-768x511.jpg 768w, 
-                        images/2023-07-iStock-961805314-1536x1021.jpg 1536w, 
-                        images/2023-07-iStock-961805314-2048x1362.jpg 2048w, 
-                        images/2023-07-iStock-961805314-1568x1043.jpg 1568w" 
-                        sizes="(max-width: 2560px) 100vw, 2560px"> -->
-
-                <!-- <img fetchpriority="high" decoding="async" width="2560" height="1702" class="banner" alt="" 
-                        src="images/cleveland.gif" 
-                        data-object-fit="cover" 
-                        > -->
-                <!-- <video autoplay="" loop="" muted="" playsinline="" class="banner" preload="none">
-                    <source src="images/highway1.mp4" type="video/mp4">
-                </video> -->
+                </h1>
 
 
-                <!-- <img class = "banner"src="images/signs.svg"> -->
+            </div>
+            
+
+
+            <div id="banner-cards-container">
+                
+                <div class="cards-outermost-container">
+
+                    <div class="cards-container">
+                        
+                        <!-- Card thumbnail image -->
+                        <div class="cards-img-container">
+                            <img class="cards-img" src="images/teen_base_558_363.jpg" >
+                        </div>
+    
+                        <!-- Card content -->
+                        <div class="cards-text-container">
+                            <h3 class="cards-text-title"><span>Teen Driver Education</span></h3>
+                            <p class="cards-text-summary">All courses needed for a teen to obtain their drivers license. In person, online and virtual classes are available</p>
+                        </div>
+                        
+                    </div>
+                    
+    
+                    <div class="cards-container">
+                        
+                        <!-- Card thumbnail image -->
+                        <div class="cards-img-container">
+                            <img class="cards-img" src="images/adult_base_558_363.jpg" >
+                        </div>
+    
+                        <!-- Card content -->
+                        <div class="cards-text-container">
+                            <h3 class="cards-text-title"><span>Adult Remedial</span></h3>
+                            <p class="cards-text-summary">Abbreviated Adult Courses, remedial program and adult driving lessons</p>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="cards-container">
+                        
+                        <!-- Card thumbnail image -->
+                        <div class="cards-img-container">
+                            <img class="cards-img" src="images/disability_base_558_363.jpg" >
+                        </div>
+    
+                        <!-- Card content -->
+                        <div class="cards-text-container">
+                            <h3 class="cards-text-title"><span>Special Needs</span></h3>
+                            <p class="cards-text-summary">Clinical evaluation, critical identification training and behind the wheel evaluation</p>
+
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="cards-container">
+                        
+                        <!-- Card thumbnail image -->
+                        <div class="cards-img-container">
+                            <img class="cards-img" src="images/senior_base_558_363.jpg" >
+                        </div>
+    
+                        <!-- Card content -->
+                        <div class="cards-text-container">
+                            <h3 class="cards-text-title"><span>Seniors & Assesements</span></h3>
+                            <p class="cards-text-summary">Clinical evluation, full written report and behind the wheel evaluation</p>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+
+                
 
 
 
@@ -97,106 +155,7 @@
 
             
 
-            <div id="hero-cards">
-                <div class="hero-cards-grid">
-
-                    <div id="image-teen" class="card-grid" onclick="location.href='teens-home.html';">
-                        <div class="card-image"><img src="images/teens2_1.jpg" alt=""></div>
-
-                        
-
-                        <div class="card-info">
-                            <h2>All courses needed for teen to obtain drivers license</h2>
-                            <hr>
-                            <ul>
-
-
-                                <li>Clasroom instruction :</li>
-                                <ul>
-                                    <li><div><span class="material-icons">chevron_right</span>In person</div></li>
-                                    <li><div><span class="material-icons">chevron_right</span>Online</div></li>
-                                    <li><div><span class="material-icons">chevron_right</span>Zoom</div></li>
-                                    <li><div><span class="material-icons">chevron_right</span>High school programs</div></li>
-                                </ul>
-
-                                <li>Behind the wheel instruction</li>
-
-                            </ul>
-                        </div>
-                        <div class="card-button"><button class="usa-button">Click to learn more</button></div>
-
-                    </div>
-
-
-                    <div id="image-adult" class="card-grid" onclick="location.href='adults-home.html';">
-                        <div class="card-image"><img src="images/adults2_1.jpg" alt=""></div>
-
-                        <div class="card-info">
-                            <h2>Adult courses</h2>
-                            <hr>
-                        
-                            <ul>
-                                <li>Abbreviated Adult Course:</li>
-                                
-                                <ul>
-                                    <li><div><span class="material-icons">chevron_right</span>4 hours online or in person class</div></li>
-                                    <li><div><span class="material-icons">chevron_right</span>4 hours behind the wheel</div></li>
-                                </ul>
-
-                                <li>Adult Remedial Program </li>
-                                <ul>
-                                    <li><div><span class="material-icons">chevron_right</span>8 hours online or in person class</div></li>
-                                </ul>
-
-                                <li>Adult driving lessons </li>
-                            </ul>
-                        </div>
-                        <div class="card-button"><button class="usa-button">Click to learn more</button></div>
-
-
-                    </div>
-
-                    <div id="image-disability" class="card-grid" onclick="location.href='disabilities-home.html';">
-                        <div class="card-image"><img src="images/disability2_1.jpg" alt=""></div>
-
-
-
-                        <div class="card-info">
-                            <h2>Specialized programs for many disabilities</h2>
-                            <hr>
-                            <ul>
-                                <li>Clnical evaluation</li>
-                                <li>Critical Identification training</li>
-                                <li>One Hour behind the wheel evaluation</li>
-                            </ul>
-                        </div>
-                        <div class="card-button"><button class="usa-button">Click to learn more</button></div>
-
-                    </div>
-
-                    <div id="image-seniors" class="card-grid" onclick="location.href='seniors-home.html';">
-                        <div class="card-image"><img src="images/seniors2_1.jpg" alt=""></div>
-
-
-                        
-                        <div class="card-info">
-                            <h2>Evaluating fitness to drive</h2>
-                            <hr>
-                            <ul>
-                                   <li> Full clinical evaluation</li>
-
-
-                                    <li>One hour behind the wheel evaluation</li>
-                                    
-                                    <li>Full written report</li>
-                    
-
-                            </ul>
-                        </div>
-                        <div class="card-button"><button class="usa-button">Click to learn more</button></div>
-                    </div>
-                </div>
-            </div>
+            
 
             
         </div>
@@ -245,7 +204,29 @@
 
         </div>
 
+        
+
         <hds-footer></hds-footer>
+
+        <div id="c-mobile">
+            <div class="mobile-menu-item">
+                <i class="fa-solid fa-bars icon"></i>
+                <span>Menu</span>
+             </div>
+
+            <div class="mobile-menu-item"> 
+                <i class="fa-solid fa-phone icon"></i> 
+                <span>Call</span>
+
+            </div>
+
+            <!-- <div class="mobile-menu-item">  
+
+
+            </div> -->
+        </div>
+
+
     </div>
 
 
