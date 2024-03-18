@@ -158,11 +158,6 @@ table.dataTable.no-footer{
    grid-template-rows: 200px 150px; 
    background-color: WHITE;
    width: 450px;
-    
-
-
-
-
 
    height: max-content;
    display: grid;
@@ -215,12 +210,14 @@ table.dataTable.no-footer{
    }
    .cards-container{
       width: 95% !important;
-      grid-template-rows: 300px 150px !important;; 
-      height: 400px !important;
+      grid-template-rows: 300px 200px !important;
+      height: 450px !important;
+      
 
 
    }
 }
+
 
 /* Phone --------------------*/
 @media screen and (max-width: 480px) { 
@@ -231,8 +228,9 @@ table.dataTable.no-footer{
    }
    .cards-container{
       width: 95% !important;
-      grid-template-rows: 300px 150px !important;; 
-      height: 400px !important;
+      grid-template-rows: 300px 200px !important;
+      height: 450px !important;
+
 
 
    }

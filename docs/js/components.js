@@ -217,6 +217,113 @@ const core_components = {
         <div class="footer-4">
             <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
         </div>
+    `,
+    mobile : `
+
+    
+    
+    
     `
 
 }
+
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+/*//!〓〓〓〓〓〓〓            MOBILE          〓〓〓〓〓〓〓〓〓〓〓 */
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+var l = console.log
+
+
+
+
+const mobileMenu = {
+
+    toggle : false,
+    get menu_toggle_element(){ return document.getElementById('mobile-menu-navigation')},
+    get header_element() {return document.getElementById('c-header')},
+    get mobile_popup_element() {return document.getElementById('mobile-navigation-popup')},
+
+
+    init() {
+        var menublock =  mobileMenu.menu_toggle_element
+
+        if(!menublock){console.log('No mobile menu for this page');return}
+        menublock.addEventListener('click',(e) =>  {
+            mobileMenu.toggle = !mobileMenu.toggle
+            if(mobileMenu.toggle){mobileMenu.open()}else{mobileMenu.close()}
+        })
+    },
+
+
+
+    open() {
+        var menublock =  mobileMenu.menu_toggle_element
+        menublock.classList.add('open')
+        mobileMenu.calcMenuHeight(true)
+
+
+
+
+
+
+        menublock.innerHTML = `
+            <i class="fa-solid fa-x"></i>
+            <span>Close</span>
+        `
+        console.log([...menublock.classList])
+        
+    },
+
+
+
+
+    close() {
+        var menublock = mobileMenu.menu_toggle_element
+        menublock.classList.remove('open')
+        mobileMenu.calcMenuHeight(false)
+
+
+        menublock.innerHTML = `
+            <i class="fa-solid fa-bars icon"></i>
+            <span>Menu</span>
+        `
+
+        console.log([...menublock.classList])
+        
+
+
+    },
+
+
+   calcMenuHeight(isopening) {
+    var popup = mobileMenu.mobile_popup_element
+    var menublock = mobileMenu.menu_toggle_element.getBoundingClientRect()
+    var header = mobileMenu.header_element.getBoundingClientRect()
+
+    if(!isopening) {
+        popup.style.display = 'none'
+        return
+    }
+
+
+
+    var space = menublock.top - header.bottom
+
+    popup.classList.add('menu-pop-open')
+    popup.style.height = `${space}px`
+    popup.style.display = 'flex'
+
+
+
+    
+
+   }
+
+
+}
+
+
+

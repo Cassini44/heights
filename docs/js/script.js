@@ -4,7 +4,9 @@
 */
 
 window.onload = (function(){
+    mobileMenu.init()
     loadTables.teen_driving_homepage()
+
     
 })
 
@@ -27,6 +29,9 @@ const loadTables = {
     }
 
 }
+
+
+
 
 
 
