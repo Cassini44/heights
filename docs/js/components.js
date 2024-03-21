@@ -43,7 +43,7 @@ customElements.define('site-navigation', SiteNavigation);
 class MobileNavigation extends HTMLElement {
     connectedCallback() {
         let page_group = this.getAttribute("data-page_group")
-        this.className = 'mobile-navigation-container'
+        this.id = 'c-mobile'
         this.innerHTML = `${mobileMenu.generateMobileNavigation(page_group)}`
     }
 }
@@ -510,7 +510,44 @@ const mobileMenu = {
        }, '')
 
 
-       return nav
+       return `
+       
+            <div id="mobile-navigation-popup" style="display: none;">
+
+
+               
+
+                    <!--  -->
+                    <div class="mobile-navigation-container">${nav}</div>
+                    <!--  -->
+                
+              
+
+            </div>
+
+
+            <div class="mobile-menu-item" id="mobile-menu-navigation">
+                <i class="fa-solid fa-bars icon"></i>
+                <span>Menu</span>
+            </div>
+
+             
+             <a class="mobile-menu-item" href="tel:440-449-3300" id="mobile-menu-phone"> 
+                <i class="fa-solid fa-phone icon"></i> 
+                <span>Call</span>
+            </a>
+
+
+            <div class="footer-4" id="mobile-menu-copyright">
+                <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
+            </div>
+
+           
+        
+
+       
+       
+       `
    }
 
 
