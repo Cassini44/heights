@@ -5,7 +5,7 @@
 
 window.onload = (function(){
     mobileMenu.init()
-    mobileMenu.open()
+    
     loadTables.teen_driving_homepage()
 
     
