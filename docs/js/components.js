@@ -395,6 +395,8 @@ const mobileMenu = {
     get menu_toggle_element(){ return document.getElementById('mobile-menu-navigation')},
     get header_element() {return document.getElementById('c-header')},
     get mobile_popup_element() {return document.getElementById('mobile-navigation-popup')},
+    disable_scroll()   { document.body.style.overflow = 'hidden';},
+    enable_scroll()       { document.body.style.overflow = 'scroll';},
 
 
     init() {
@@ -413,6 +415,7 @@ const mobileMenu = {
         var menublock =  mobileMenu.menu_toggle_element
         menublock.classList.toggle('open')
         mobileMenu.calcMenuHeight(true)
+        mobileMenu.disable_scroll()
         menublock.innerHTML = `
             <i class="fa-solid fa-x"></i>
             <span>Close</span>
@@ -428,7 +431,7 @@ const mobileMenu = {
         var menublock = mobileMenu.menu_toggle_element
         menublock.classList.toggle('open')
         mobileMenu.calcMenuHeight(false)
-
+        mobileMenu.enable_scroll()
 
         menublock.innerHTML = `
             <i class="fa-solid fa-bars icon"></i>
@@ -466,9 +469,12 @@ const mobileMenu = {
     if(classlist.contains(mobileMenu.submenu_closed)) {
         classlist.replace(mobileMenu.submenu_closed,mobileMenu.submenu_open)
         menu.classList.add('mobile-navigation-block-active')
+        
+        
     }else{
         classlist.replace(mobileMenu.submenu_open,mobileMenu.submenu_closed)
         menu.classList.remove('mobile-navigation-block-active')
+        
     }
     
 

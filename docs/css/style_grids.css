@@ -246,7 +246,9 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 }
 
 
-#mobile-navigation-popup {overflow-y: scroll; grid-area: menupopup; background-color: var(--accent-color-1); }
+#mobile-navigation-popup {
+   overflow-y: scroll; 
+   grid-area: menupopup; background-color: var(--accent-color-1); }
 #mobile-menu-navigation {grid-area: navigation; border-right: 2px inset #05050542; border-top: 2px outset #05050542; border-bottom: 2px inset #05050542;}
 #mobile-menu-navigation.open {background-color: var(--accent-color-1);}
 #mobile-menu-phone {grid-area: phone; display: block; border-left: 2px inset #05050542; border-top: 2px outset #05050542; border-bottom: 2px inset #05050542;}
@@ -337,6 +339,8 @@ div.mobile-navigation-block div:not(:last-child) {
 
 }
 /* ------------- */
+
+
 
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
