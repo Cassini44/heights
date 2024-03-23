@@ -70,6 +70,7 @@
    grid-area: body; 
    display: grid;
    height: 100%;
+   min-height: 80vh;
    width: 100%;
    grid-template-rows: repeat(100, 1%);
 }
@@ -210,6 +211,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 
 #login-button-text.login-button {
    font-family: 'Source Sans 3';
+   white-space: nowrap;
    font-size:  2em;
    line-height: .9;
    color: #fff;
@@ -220,7 +222,8 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
    display: inline-block;
    font-weight: 700;
    margin-right: .5rem;
-   padding: 1rem 5rem;
+   padding: 1rem 2rem;
+
    text-align: center;
    text-decoration: none;
 }
@@ -321,23 +324,28 @@ div.mobile-navigation-block div:not(:last-child) {
 /* ----- */
 
 /*Each item*/
-.mobile-navigation-item {
-   /* padding: 1em;
-   padding-left:3rem; */
+.mobile-navigation-item { background-color: rgba(255, 255, 255, 0.137); }
 
-   background-color: rgba(255, 255, 255, 0.137);
-}
-.mobile-navigation-item > a{
-   padding: 1em;
-   display: block;
-   padding-left:3rem;
 
-   /* background-color: rgba(255, 255, 255, 0.137); */
-}
+.mobile-navigation-item > a{ padding: 1em; display: block; padding-left:3rem; }
 
-.mobile-navigation-item-active {
+
+
+
+.mobile-navigation-item-home > a { 
+   font-size: 2.2rem;
 
 }
+
+.mobile-navigation-item-not_home > a { 
+   font-size: 1.8rem;
+   margin-left: 2rem;
+}
+
+.mobile-navigation-item-active { }
+
+
+
 /* ------------- */
 
 

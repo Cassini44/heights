@@ -3,6 +3,9 @@
   * 2023  
 */
 
+
+
+// LOADS ON EVERY PAGE
 window.onload = (function(){
     mobileMenu.init()
     

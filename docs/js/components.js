@@ -44,7 +44,7 @@ class MobileNavigation extends HTMLElement {
     connectedCallback() {
         let page_group = this.getAttribute("data-page_group")
         this.id = 'c-mobile'
-        this.innerHTML = `${mobileMenu.generateMobileNavigation(page_group)}`
+        this.innerHTML = `${navigations.generateMobileNavigation(page_group)}`
     }
 }
 customElements.define('mobile-navigation', MobileNavigation);
@@ -58,17 +58,10 @@ customElements.define('mobile-navigation', MobileNavigation);
 
 /* -------------------------------------------------------------------------- */
 /* -------------------------------------------------------------------------- */
-const j = {
 
 
 
 
-}
-
-
-const tables = {
-
-}
 
 const navigations = {
     /**
@@ -99,6 +92,92 @@ const navigations = {
         },'')
         return `<ul>${nav}</ul>`
     },
+
+
+
+
+    generateMobileNavigation(nav_type) {
+        var page_title = document.title
+ 
+        var sections = Object.keys(navigations.sections) //?
+ 
+ 
+ 
+ 
+        let nav = sections.reduce((acc, v) => {
+         
+ 
+            var { section_title, links } = navigations.sections[v]
+ 
+ 
+            var block = links.reduce((acc2, v2) => {
+                // v2
+                var { isHome, currentpageTitle, link, display } = v2
+                var currentpage = currentpageTitle === page_title ? 'mobile-navigation-item-active' : ''
+                var ishome = isHome ? 'mobile-navigation-item-home' : 'mobile-navigation-item-not_home'
+                var submenuitem = !isHome ? '<span class="material-icons"> subdirectory_arrow_right</span>' : '<span></span>'
+                var linkblock = `
+                <div class="${ishome} ${currentpage} mobile-navigation-item"> 
+
+                <div >${submenuitem}
+                <a href="${link}">${display}</a> 
+                </div>
+
+                </div>`
+                acc2 += linkblock
+                return acc2
+            }, '')
+
+            acc += `
+                     <div onclick="mobileMenu.menuClick(this)" class="mobile-navigation-section">
+                         <span class="mobile-navigation-section-title">${section_title}</span> 
+                         <i class="fa-solid fa-chevron-right"></i>
+                     </div>
+                     <div class="mobile-navigation-block">${block}</div>  
+                 `
+            return acc
+        }, '')
+ 
+ 
+        return `
+        
+             <div id="mobile-navigation-popup" style="display: none;">
+ 
+ 
+                
+ 
+                     <!--  -->
+                     <div class="mobile-navigation-container">${nav}</div>
+                     <!--  -->
+                 
+               
+ 
+             </div>
+ 
+ 
+             <div class="mobile-menu-item" id="mobile-menu-navigation">
+                 <i class="fa-solid fa-bars icon"></i>
+                 <span>Menu</span>
+             </div>
+ 
+              
+              <a class="mobile-menu-item" href="tel:440-449-3300" id="mobile-menu-phone"> 
+                 <i class="fa-solid fa-phone icon"></i> 
+                 <span>Call</span>
+             </a>
+ 
+ 
+             <div class="footer-4" id="mobile-menu-copyright">
+                 <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
+             </div>
+ 
+            
+         
+ 
+        
+        
+        `
+    },
     
     /**
      * display - what actually is shown to the user
@@ -124,19 +203,19 @@ const navigations = {
                     isHome: true
                 },
                 {
-                    display: 'Classroom Locations',
+                    display: 'Classroom Schedule',
                     link: 'teens-locations.html',
                     currentpageTitle: 'Ohio Classroom Locations'
                 },
                 {
-                    display: 'High School Classes',
-                    link: 'teens-highschool-classes.html',
-                    currentpageTitle: 'Ohio High School Drivers Ed'
-                },
-                {
-                    display: 'Virtual Classes',
+                    display: 'Zoom Class Schedule',
                     link: 'teens-virtual-classes.html',
                     currentpageTitle: 'Ohio Virtual Driving Classes'
+                },
+                {
+                    display: 'High School Program',
+                    link: 'teens-highschool-classes.html',
+                    currentpageTitle: 'Ohio High School Drivers Ed'
                 },
                 {
                     display: 'Online Classes',
@@ -264,6 +343,9 @@ const navigations = {
             }]
         }
     },
+
+
+
 }
 
 
@@ -391,7 +473,6 @@ const mobileMenu = {
     submenu_open : 'fa-chevron-down',
 
 
-
     get menu_toggle_element(){ return document.getElementById('mobile-menu-navigation')},
     get header_element() {return document.getElementById('c-header')},
     get mobile_popup_element() {return document.getElementById('mobile-navigation-popup')},
@@ -400,6 +481,7 @@ const mobileMenu = {
 
 
     init() {
+        l(1)
         var menublock =  mobileMenu.menu_toggle_element
 
         if(!menublock){console.log('No mobile menu for this page');return}
@@ -456,7 +538,7 @@ const mobileMenu = {
     popup.style.display = 'flex' //~Opens the popup
 
    },
-//fa-chevron-down
+
    menuClick(x) {
     
     var icon = x.querySelector('i')
@@ -481,81 +563,9 @@ const mobileMenu = {
     
     
 
-   },
-
-   generateMobileNavigation(nav_type) {
-       var page_title = document.title
-
-       var sections = Object.keys(navigations.sections) //?
-
-
-
-
-       let nav = sections.reduce((acc, v) => {
-
-           var { section_title, links } = navigations.sections[v]
-
-
-           var block = links.reduce((acc2, v2) => {
-               // v2
-               var { isHome, currentpageTitle, link, display } = v2
-               var currentpage = currentpageTitle === page_title ? 'mobile-navigation-item-active' : ''
-               var linkblock = `<div class="${currentpage} mobile-navigation-item"> <a href="${link}">${display}</a> </div>`
-               acc2 += linkblock
-               return acc2
-           }, '')
-           acc += `
-                    <div onclick="mobileMenu.menuClick(this)" class="mobile-navigation-section">
-                        <span class="mobile-navigation-section-title">${section_title}</span> 
-                        <i class="fa-solid fa-chevron-right"></i>
-                    </div>
-                    <div class="mobile-navigation-block">${block}</div>  
-                `
-
-           return acc
-       }, '')
-
-
-       return `
-       
-            <div id="mobile-navigation-popup" style="display: none;">
-
-
-               
-
-                    <!--  -->
-                    <div class="mobile-navigation-container">${nav}</div>
-                    <!--  -->
-                
-              
-
-            </div>
-
-
-            <div class="mobile-menu-item" id="mobile-menu-navigation">
-                <i class="fa-solid fa-bars icon"></i>
-                <span>Menu</span>
-            </div>
-
-             
-             <a class="mobile-menu-item" href="tel:440-449-3300" id="mobile-menu-phone"> 
-                <i class="fa-solid fa-phone icon"></i> 
-                <span>Call</span>
-            </a>
-
-
-            <div class="footer-4" id="mobile-menu-copyright">
-                <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
-            </div>
-
-           
-        
-
-       
-       
-       `
    }
 
+   
 
 }
 
