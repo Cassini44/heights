@@ -11,7 +11,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
     <script>WebFont.load({google: {families:['Public Sans', 'Source Sans 3','Roboto']}});</script>
     <style>
@@ -31,6 +31,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/locations.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="js/fcns.js"></script>
@@ -52,95 +53,25 @@
                 <div class="page-ux-col1 sidebar-navigation">
                     <site-navigation data-page_group="teens"></site-navigation>
                 </div>
+                
                 <div class="page-ux-col2 body-text">
                     <h1> Classroom Locations </h1>
+                    <!-- -----------------------  -->
+                    <!-- -----------------------  -->
+
+                    <div class="location-selector-container"><div class="location-selector">
+                        <div class="location-option active-location" data-class_location = "Mayfield Village"><span>Mayfield Village</span></div>
+                        <div class="location-option" data-class_location = "Broadview Hts"><span>Broadview Hts</span></div>
+                        <div class="location-option" data-class_location = "Cleveland Hts"><span>Cleveland Hts</span></div>
+                        <div class="location-option" data-class_location = "Mentor"><span>Mentor</span></div>
+                    </div></div>
 
                     
-                   <div class="locations-grid">
-
-                       
-                        <div class="location-container" >
-                            <div class=" location-calendar">
-                                    <iframe 
-                                    
-
-                                    width="95%" height="95%" style="border:5% solid #3b3b3b25;"
-                                    src="https://www.google.com/calendar/embed?src=lkv5mih5kmq4bpnjm5cjubfm3c%40group.calendar.google.com&amp;ctz=America/New_York">
-                                </iframe>
-                                
-                            </div>
-
-                            <div></div>
-                            
-                            <div class="location-map"><iframe width="95%" height="95%" 
-                                
-                                style="border:5% solid #3b3b3b25" loading="lazy" allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade" 
-                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ
-                                &q=7537%20Mentor%20Ave%20Mentor%2044060">
-                            </iframe></div>
-                        </div>
-
-
-
-                        <div class="location-container" >
-                            <div class=" location-calendar">
-                                    <iframe 
-
-
-                                    width="95%" height="95%" style="border:5% solid #3b3b3b25;"
-                                    src="https://www.google.com/calendar/embed?src=qt50os7cn06qvh5bg3s0k85u54%40group.calendar.google.com&amp;ctz=America/New_York">
-                                </iframe>
-                                
-                            </div>
-
-                            <div></div>
-
-                            <div class="location-map"><iframe width="95%" height="95%" 
-                                
-                                style="border:5% solid #3b3b3b25" loading="lazy" allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade" 
-                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ
-                                &q=8141%20Broadview%20Broadview%20Hts%2044147">
-                            </iframe></div>
-                        </div>
-
-
-
-                        <div class="location-container" >
-                            <div class=" location-calendar">
-                                    <iframe 
-
-
-                                    width="95%" height="95%" style="border:5% solid #3b3b3b25;"
-                                    src="https://www.google.com/calendar/embed?src=12dpqf04c8ohqcu2phov5kts0o%40group.calendar.google.com&amp;ctz=America/New_York">
-                                </iframe>
-                                
-                            </div>
-
-                            <div></div>
-
-                            <div class="location-map"><iframe width="95%" height="95%" 
-                                
-                                style="border:5% solid #3b3b3b25" loading="lazy" allowfullscreen
-                                referrerpolicy="no-referrer-when-downgrade" 
-                                src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ
-                                &q=2000%20Lee%20Road%20Cleveland%20Hts%2044118">
-                            </iframe></div>
-                        </div>
-
-
-
-
-
-                       
-
-
-                        
-                       
-
-                       
-                   </div>
+                    <div id="location-load-spinner">
+                        <div class="lds-facebook" ><div></div><div></div><div></div></div></div>
+                    <div id="hds-locations-outermost-container"><hds-locations></hds-locations></div>
+                   <!-- -----------------------  -->
+                   <!-- -----------------------  -->
                 </div>
                 <div class="page-ux-col3">
                     <h1>Helpful Links</h1>
@@ -155,8 +86,8 @@
                     <div class="sidebar-section">
                         <h2>Files</h2>
                         <a class="icon-join-box external-link" href="user_download_files\BTW-LOGSHEET.pdf" download="Heights-BTW-LogSheet"><span class="material-icons">picture_as_pdf</span>Behind the Wheel Logsheet</a>
-        <a class="icon-join-box external-link" href="user_download_files\MANEUVERABILITY.pdf" download="Heights-Maneuverability"><span class="material-icons">picture_as_pdf</span>Maneuverability Course Layout</a>
-        <a class="icon-join-box external-link" href="user_download_files\FIFTY_HOUR_AFFIDAVIT.pdf" download="FiftyHourAffidavit"><span class="material-icons">picture_as_pdf</span>Fifty Hour Affidavit</a>
+                    <a class="icon-join-box external-link" href="user_download_files\MANEUVERABILITY.pdf" download="Heights-Maneuverability"><span class="material-icons">picture_as_pdf</span>Maneuverability Course Layout</a>
+                    <a class="icon-join-box external-link" href="user_download_files\FIFTY_HOUR_AFFIDAVIT.pdf" download="FiftyHourAffidavit"><span class="material-icons">picture_as_pdf</span>Fifty Hour Affidavit</a>
                     </div>
         
                 
@@ -173,7 +104,7 @@
 
 
         <hds-footer></hds-footer>
-        <mobile-navigation ></mobile-navigation>
+        <mobile-nav ></mobile-nav >
     </div>
 </body>
 

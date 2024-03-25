@@ -1,5 +1,27 @@
 /*  Used on most pages other than homepage */
-.page-ux .page-ux-col2 { border: 1px solid var(--accent-border-grey); }
+.page-ux .page-ux-col2 { border: 1px solid var(--accent-color-4); min-height: 80vh;}
+.body-text{background-color: white;}
+
+
+/* .page-ux{height:100%;} */
+.body-text > h1 {
+    font-family: "Roboto";
+    color: var(--h1-color); 
+    border-bottom: 1px solid var(--accent-color-4);
+
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    white-space: nowrap; 
+    line-height: 10rem; 
+    margin-bottom:3rem 
+}
+
+.body-text > h2{
+    font-family: "Roboto";
+    
+    color: var(--accent-color-2); 
+    font-size: clamp(1.7rem, 7vw, 2rem);
+    white-space: nowrap; 
+}
 
 
 
@@ -8,16 +30,6 @@
 
 
 
-
-
-
-
-
-
-
-.page-ux .locations-grid { display:grid; grid-template-rows: 35rem 35rem 35rem; }
-.page-ux .locations-grid .location-container{ display: grid; grid-template-columns: 1.2fr 10rem 1fr; }
-.page-ux .locations-grid .location-container div{ margin:2rem; }
 
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
@@ -27,42 +39,61 @@
 
 
 /*General scheme for body of a page*/
-.body-text { 
-    background-color: white; 
-}
+
 .body-text h1,.body-text p,.body-text ul,.body-text h2 { margin:1.2rem; }
 
 
-.body-text h1 {
-    white-space: nowrap; 
-    line-height: 10rem; 
-    font-size: clamp(7vw, 1vw + 1rem, 4rem);
-    
-    color: var(--dark-grey); 
-    border-bottom: 1px solid var(--accent-border-grey);
-    margin-bottom:3rem 
+
+
+
+
+
+
+.body-text p { font-size: 2rem; line-height: 3rem; }
+
+
+.body-text p.indent {
+    font-size: 1.6rem; 
+    line-height: 1.9rem;
+    border-left:1px solid rgba(128, 128, 128, 0.288);
+    padding-left: 1rem; 
+    margin-left:5rem;
 }
 
+.body-text li { font-size: 1.7rem; }
 
-.body-text p {
-     font-size: 2rem; 
-}
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+.registration-table {
 
-.body-text li { 
-    font-size: 1.7rem; 
+    padding: 2rem;
+
 }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
-
-
 .dps-logo{ height: 5rem; }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
+.page-ux-btn-container {
+    padding: 2rem;
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.page-ux-btn {
+    font-size: 2.5rem;
+    font-family: "source sans 3";
+    font-weight: 900;
 
 
+    height: 8rem;
+}
 
 
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
 
 
@@ -79,6 +110,8 @@
     .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; }
     .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
     .page-ux .sidebar-navigation h2 { text-align: center; font-style: italic; color: rgb(117, 117, 117); }
+    
+    
     .page-ux .sidebar-navigation ul{
         margin-top:5rem;
         margin-left: 0rem;
@@ -86,22 +119,32 @@
         line-height: 5rem;
         font-size: 2rem;
         list-style-type: none;   
+
     }
     .page-ux .sidebar-navigation ul li div { display: flex; align-items: center; }
     .page-ux .sidebar-navigation ul li{ cursor: pointer; box-sizing: border-box; padding-left:0.5rem; border-left:0.5rem solid rgba(49, 49, 187, 0); }
-    .page-ux .sidebar-navigation ul li:hover { background-color: #d0daeb71; }
-    .page-ux .sidebar-navigation ul li.active-navigation-item{ border-left:0.5rem solid var(--accent-color-3); font-weight: 700; }
+    .page-ux .sidebar-navigation ul li:hover { background-color: var(--accent-color-4); }
+    .page-ux .sidebar-navigation ul li.active-navigation-item{ border-left:0.5rem solid var(--accent-color-2); font-weight: 700;color: var(--accent-color-2)}
     .page-ux .sidebar-navigation ul li.sub-navigation-item{ font-size: 1.8rem; }
     .page-ux .sidebar-navigation ul a{ width:100%; display: block; }
     .page-ux .sidebar-navigation ul .material-icons { font-size:1.5rem; }
     
 }
  
+@media screen and (min-width: 1185px) { 
+    .page-ux-col2 {padding: 5rem; }
+    
+ }
+
+
+
 
 
 /* Small laptop? --------------------*/
 @media screen and (min-width: 846px) and (max-width: 1185px) { 
     .page-ux .page-ux-col1 {display: none;}
+    .page-ux-col2 {padding: 5rem; }
+
 
 
     
@@ -111,11 +154,47 @@
  /* In betweena phone and desktop --------------------*/
  @media screen and (min-width: 481px) and (max-width: 845px) { 
     .page-ux .page-ux-col1 {display: none;}
+    .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; }
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
+    /* .page-ux-col2 {padding: 0.5rem; } */
+
+    table.dataTable.no-footer{width: 100%;}
+    .register_button_table {padding: 20%  !important;}
+
 }
  
  /* Phone --------------------*/
  @media screen and (max-width: 480px) { 
+
     .page-ux .page-ux-col1 {display: none;}
+    .page-ux .page-ux-col3 .sidebar-section,.page-ux .page-ux-col3 h1{ margin-left: 1rem; margin-top: 2rem; }
+    .page-ux .page-ux-col3{margin-bottom: 30px;}
+    .page-ux-col2 {padding: 0.5rem; }
+
+    
+
+
+
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
+    
+    table.dataTable.no-footer{width: 90%;}
+
+    .register_button_table {padding: 20%  !important;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 }
 
 

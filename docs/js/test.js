@@ -211,18 +211,18 @@ function t() {
                 var block = links.reduce((acc2,v2)=>{
                     // v2
                     var {isHome,currentpageTitle,link,display} = v2
-                    var currentpage = currentpageTitle === page_title ? 'mobile-navigation-item-active' : ''
-                    var linkblock = `<div class="${currentpage} mobile-navigation-item"> <a href="${link}">${display}</a> </div>`
+                    var currentpage = currentpageTitle === page_title ? 'mnav-item-active' : ''
+                    var linkblock = `<div class="${currentpage} mnav-item"> <a href="${link}">${display}</a> </div>`
                     acc2+=linkblock 
                     return acc2
                 },'')
                 acc+=`
-                <div onclick="" class="mobile-navigation-section"> 
-                    <div class="mobile-navigation-section-toggle">
-                        <span class="mobile-navigation-section-title">${section_title}</span> 
+                <div onclick="" class="mnav-section"> 
+                    <div class="mnav-section-toggle">
+                        <span class="mnav-section-title">${section_title}</span> 
                         <i class="fa-solid fa-chevron-down"></i>
                     </div>
-                    <div class="mobile-navigation-block">${block}</div>  
+                    <div class="mnav-block">${block}</div>  
                 </div>`
 
                 return acc

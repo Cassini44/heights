@@ -47,7 +47,17 @@ class MobileNavigation extends HTMLElement {
         this.innerHTML = `${navigations.generateMobileNavigation(page_group)}`
     }
 }
-customElements.define('mobile-navigation', MobileNavigation);
+customElements.define('mobile-nav', MobileNavigation);
+
+
+class HdsLocations extends HTMLElement {
+    connectedCallback() {
+        this.id = 'locations-container'
+        this.innerHTML = `${locations.generateLocations()}`
+    }
+}
+customElements.define('hds-locations', HdsLocations);
+
 
 
 
@@ -113,27 +123,33 @@ const navigations = {
             var block = links.reduce((acc2, v2) => {
                 // v2
                 var { isHome, currentpageTitle, link, display } = v2
-                var currentpage = currentpageTitle === page_title ? 'mobile-navigation-item-active' : ''
-                var ishome = isHome ? 'mobile-navigation-item-home' : 'mobile-navigation-item-not_home'
-                var submenuitem = !isHome ? '<span class="material-icons"> subdirectory_arrow_right</span>' : '<span></span>'
+                var currentpage = currentpageTitle === page_title ? 'mnav-item-active' : ''
+                var ishome = isHome ? 'mnav-item-home' : 'mnav-item-not_home'
+                var submenuitem = !isHome ? '<span class="material-icons">subdirectory_arrow_right</span>' : '<span></span>'
+
+                //➕
                 var linkblock = `
-                <div class="${ishome} ${currentpage} mobile-navigation-item"> 
-
-                <div >${submenuitem}
-                <a href="${link}">${display}</a> 
+                <div class="${ishome} ${currentpage} mnav-item"> 
+                    <a href="${link}">
+                        <div class="mnav-item-display">
+                        ${submenuitem} 
+                        <span>${display}</span> 
+                        </div>
+                    </a> 
                 </div>
-
-                </div>`
+                `
                 acc2 += linkblock
                 return acc2
             }, '')
 
+
+            //➕
             acc += `
-                     <div onclick="mobileMenu.menuClick(this)" class="mobile-navigation-section">
-                         <span class="mobile-navigation-section-title">${section_title}</span> 
+                     <div onclick="mobileMenu.menuClick(this)" class="mnav-section">
+                         <span class="mnav-section-title">${section_title}</span> 
                          <i class="fa-solid fa-chevron-right"></i>
                      </div>
-                     <div class="mobile-navigation-block">${block}</div>  
+                     <div class="mnav-block">${block}</div>  
                  `
             return acc
         }, '')
@@ -141,17 +157,14 @@ const navigations = {
  
         return `
         
-             <div id="mobile-navigation-popup" style="display: none;">
+             <div id="mnav-popup" style="display: none;">
  
- 
-                
  
                      <!--  -->
-                     <div class="mobile-navigation-container">${nav}</div>
+                     <div class="mnav-container">${nav}</div>
                      <!--  -->
                  
                
- 
              </div>
  
  
@@ -203,12 +216,13 @@ const navigations = {
                     isHome: true
                 },
                 {
-                    display: 'Classroom Schedule',
+                    display: 'In-Person Classes',
                     link: 'teens-locations.html',
+
                     currentpageTitle: 'Ohio Classroom Locations'
                 },
                 {
-                    display: 'Zoom Class Schedule',
+                    display: 'Zoom Classes',
                     link: 'teens-virtual-classes.html',
                     currentpageTitle: 'Ohio Virtual Driving Classes'
                 },
@@ -242,8 +256,8 @@ const navigations = {
                     isHome: true
                 },
                 {
-                    display: 'Abreviated Program',
-                    link: 'adults-abreviated.html',
+                    display: 'Abbreviated Program',
+                    link: 'adults-Abbreviated.html',
                     currentpageTitle: 'Ohio Adult Abbreviated Program'
                 },
                 {
@@ -475,7 +489,7 @@ const mobileMenu = {
 
     get menu_toggle_element(){ return document.getElementById('mobile-menu-navigation')},
     get header_element() {return document.getElementById('c-header')},
-    get mobile_popup_element() {return document.getElementById('mobile-navigation-popup')},
+    get mobile_popup_element() {return document.getElementById('mnav-popup')},
     disable_scroll()   { document.body.style.overflow = 'hidden';},
     enable_scroll()       { document.body.style.overflow = 'scroll';},
 
@@ -542,7 +556,7 @@ const mobileMenu = {
    menuClick(x) {
     
     var icon = x.querySelector('i')
-    var block = x.querySelector('mobile-navigation-block')
+    var block = x.querySelector('mnav-block')
     var menu = x.nextElementSibling
 
     var classlist = icon.classList
@@ -550,12 +564,12 @@ const mobileMenu = {
     //it must be getting opened if its currently closed
     if(classlist.contains(mobileMenu.submenu_closed)) {
         classlist.replace(mobileMenu.submenu_closed,mobileMenu.submenu_open)
-        menu.classList.add('mobile-navigation-block-active')
+        menu.classList.add('mnav-block-active')
         
         
     }else{
         classlist.replace(mobileMenu.submenu_open,mobileMenu.submenu_closed)
-        menu.classList.remove('mobile-navigation-block-active')
+        menu.classList.remove('mnav-block-active')
         
     }
     
@@ -566,6 +580,111 @@ const mobileMenu = {
    }
 
    
+
+}
+
+
+
+const locations = {
+
+
+    programs: {
+        teen_classes : [
+
+                {name: 'Mayfield Village',
+                address_display: '771 Beta Dr, Mayfield Village, 44143',
+                address_src : '771%20Beta%20Dr%20Mayfield%20Village%2044143',
+                calender_src: '9io5lt0dqvqlsq0d8jcfdr8ohc%40group.calendar.google.com',
+                calender_api: '9io5lt0dqvqlsq0d8jcfdr8ohc@group.calendar.google.com'},
+
+                {name: 'Broadview Hts',
+                address_display: '8141 Broadview, Broadview Hts, 44147',
+                address_src : '8141%20Broadview%20Broadview%20Hts%2044147',
+                calender_src: 'qt50os7cn06qvh5bg3s0k85u54%40group.calendar.google.com',
+                calender_api: 'qt50os7cn06qvh5bg3s0k85u54@group.calendar.google.com'},
+
+                {name: 'Cleveland Hts',
+                address_display: '2000 Lee Road, Cleveland Hts, 44118',
+                address_src : '2000%20Lee%20Road%20Cleveland%20Hts%2044118',
+                calender_src: '12dpqf04c8ohqcu2phov5kts0o%40group.calendar.google.com',
+                calender_api: '12dpqf04c8ohqcu2phov5kts0o@group.calendar.google.com'},
+
+                {name: 'Mentor',
+                address_display: '7537 Mentor Ave, Mentor, 44060',
+                address_src : '7537%20Mentor%20Ave%20Mentor%2044060',
+                calender_src: 'lkv5mih5kmq4bpnjm5cjubfm3c%40group.calendar.google.com',
+                calender_api: 'lkv5mih5kmq4bpnjm5cjubfm3c@group.calendar.google.com'}
+
+
+        ],
+
+        adult_abbreviated: {
+            ["Mayfield Villlage"] : {
+                address_display: '771 Beta Dr, Mayfield Village, 44143',
+                address_src : '771%20Beta%20Dr%20Mayfield%20Village%2044143'
+            }
+        },
+        adult_remedial: {
+            ["Cleveland Hts"] : {
+                address_display: '2000 Lee Road, Cleveland Hts, 44118',
+                address_src : '2000%20Lee%20Road%20Cleveland%20Hts%2044118',
+            }
+        }
+
+    },
+
+
+    generateLocations() {
+        
+        
+        var htmlForLocations = locations.programs.teen_classes.reduce((acc,v,i)=>{
+
+            var {address_display,address_src,calender_api,calender_src,name} = v
+
+            var src_calender = `https://www.google.com/calendar/embed?src=${calender_src}`&&''
+            var src_calender = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ&q=${address_src}`&&''
+
+            var y = `
+            <div class="loc-container ${!i ? 'active-loc' : ''}" data-class_location = "${name}">
+                <div class="loc-address">${address_display}</div>
+                
+    
+                <div class="loc-calender">
+                        <iframe 
+                        width="100%" height="100%" 
+                        src="${src_calender}">
+                    </iframe>
+                    
+                </div>
+    
+                
+    
+                <div class="loc-map">
+                    <iframe width="100%" height="100%"  loading="lazy" 
+                    allowfullscreen
+                    referrerpolicy="no-referrer-when-downgrade" 
+                    src=" ${src_calender} ">
+                    </iframe>
+                </div>
+            </div>
+    
+    
+            `
+
+            acc += y
+            return acc
+
+
+
+
+        },'')
+        
+        return htmlForLocations
+        
+
+
+    }
+
 
 }
 

@@ -1,4 +1,56 @@
 
+window.onload = (function(){
+    // gapi.load('client');
+
+    [...document.querySelectorAll('.location-option')].map((v)=>{
+        v.addEventListener("click",locSelection.click)
+    })
+    locSelection.current_active = document.querySelector('.location-option.active-location').dataset.class_location
+
+
+    
+
+
+
+    
+    
+})
+
+
+
+
+
+const locSelection = {
+
+    current_active:'',
+    
+
+    click(e) {
+        
+        var clicked_loc = e.target.dataset.class_location
+        if(clicked_loc !== locSelection.current_active) {
+
+            // Deactive currently active
+            document.querySelector('.location-option.active-location').classList.toggle('active-location')
+
+            document.querySelector('.loc-container.active-loc').classList.toggle('active-loc')
+            //-------
+
+            e.target.classList.toggle('active-location')
+
+            document.querySelector(`.loc-container[data-class_location="${clicked_loc}"]`).classList.toggle('active-loc')
+
+            locSelection.current_active = clicked_loc
+
+            
+        }
+    }
+
+
+}
+
+
+
 
 const class_calendar = {}
 
@@ -23,10 +75,11 @@ function printCalendar(calendarId) {
             'timeZone': userTimeZone,
             'singleEvents': true,
             'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
-            'maxResults': 20,
+            'maxResults': 50,
             'orderBy': 'startTime'
         });
     }).then(function (response) {
+        // console.log(response.result.items)
         if (response.result.items) {
 
             var calendarRows = ['<table class="wellness-calendar"><tbody>'];
@@ -52,8 +105,9 @@ function printCalendar(calendarId) {
 
             });
 
-
+            console.log(calendarRows)
             calendarRows.push('</tbody></table>');
+            
             
            
         }
@@ -63,4 +117,4 @@ function printCalendar(calendarId) {
 }
 
 // Loads the JavaScript client library and invokes `start` afterwards.
-gapi.load('client');
+

@@ -70,9 +70,9 @@
    grid-area: body; 
    display: grid;
    height: 100%;
-   min-height: 80vh;
+   /* min-height: 80vh; */
    width: 100%;
-   grid-template-rows: repeat(100, 1%);
+   /* grid-template-rows: repeat(100, 1%); */
 }
 
 
@@ -186,7 +186,7 @@
 .heights-logo { height: 100%; }
 .call-office { color:var(--header-menu-item-color); text-wrap: nowrap; font-size: 1.2em; text-decoration: none; }
 a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-color: rgba(255, 255, 255, 0); padding: 1rem 5rem; color: var(--header-menu-item-color); }
-.call-office .icon{ color: var(--accent-color-1); text-align: center; margin-right: 0.5rem; }
+.call-office .icon{ color: var(--primary-color-shade-lighter); text-align: center; margin-right: 0.5rem; }
 .call-office  .phone-number { color: var(--header-menu-item-color); font-style:normal; font-family: 'Public sans'; }
 
 /*--------------------------------------------------------------------------------------*/
@@ -203,7 +203,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 .navigation-menu-container ul ul li { display: block; }
 .navigation-menu-container li:hover { background-color: rgb(48, 47, 47); }
 .navigation-menu-container li:hover ul { display: block; background-color: rgb(48, 47, 47); }
-.navigation-menu-container ul ul li a:hover { background-color: var(--accent-color-1); }
+.navigation-menu-container ul ul li a:hover { background-color: var(--primary-color-shade-lighter); }
 .phone-number{ text-decoration: none; }
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
@@ -215,7 +215,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
    font-size:  2em;
    line-height: .9;
    color: #fff;
-   background-color: var(--accent-color-1);
+   background-color: var(--primary-color-shade-lighter);
    border: 0;
    border-radius: .25rem;
    cursor: pointer;
@@ -249,11 +249,11 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 }
 
 
-#mobile-navigation-popup {
+#mnav-popup {
    overflow-y: scroll; 
-   grid-area: menupopup; background-color: var(--accent-color-1); }
+   grid-area: menupopup; background-color: var(--primary-color-shade-lighter); }
 #mobile-menu-navigation {grid-area: navigation; border-right: 2px inset #05050542; border-top: 2px outset #05050542; border-bottom: 2px inset #05050542;}
-#mobile-menu-navigation.open {background-color: var(--accent-color-1);}
+#mobile-menu-navigation.open {background-color: var(--primary-color-shade-lighter);}
 #mobile-menu-phone {grid-area: phone; display: block; border-left: 2px inset #05050542; border-top: 2px outset #05050542; border-bottom: 2px inset #05050542;}
 #mobile-menu-copyright { grid-area: copyright; border-top: 2px inset #05050542; font-size: 1em !important; }
 #mobile-menu-copyright.footer-4 > span { color: var(--grey)!important; }
@@ -274,7 +274,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 
 
 
-.mobile-navigation-container {
+.mnav-container {
    height: 100%;
    width: 100%;
    display: flex;
@@ -285,7 +285,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
 
 /* --- */
 
-.mobile-navigation-section {
+.mnav-section {
    box-shadow: -11px -6px 20px 0px #0000003b;
    border: 1px solid;
    padding: 1%;
@@ -296,53 +296,67 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
    padding-left: 1em;
 }
 
-.mobile-navigation-section > i {
+.mnav-section > i {
    padding-right: 2em;
    font-weight: 900;
    font-size: 3rem !important;
 
 }
-.mobile-navigation-section-title {
+.mnav-section-title {
    font-size: 2em;
 }
 
 /* ----- */
 
-.mobile-navigation-block { 
+.mnav-block { 
    display: none; 
-   font-size: 2.5rem; 
+
 }
-div.mobile-navigation-block div:not(:last-child) {
+
+div.mnav-block div:not(:last-child) {
    /* border-top: 1px solid white; */
    border-bottom: 1px solid rgba(255, 255, 255, 0.349);
 }
 /*The whole block*/
-.mobile-navigation-block-active.mobile-navigation-block{
+.mnav-block-active.mnav-block{
    display: grid;
 }
 
 /* ----- */
 
 /*Each item*/
-.mobile-navigation-item { background-color: rgba(255, 255, 255, 0.137); }
+.mnav-item { background-color: #ffffff1c; }
 
-
-.mobile-navigation-item > a{ padding: 1em; display: block; padding-left:3rem; }
-
-
-
-
-.mobile-navigation-item-home > a { 
-   font-size: 2.2rem;
+/* Menu item */
+.mnav-item-display{ 
+   padding: 1em; 
+   display: flex; 
+   padding-left:3rem; 
+   align-items: center;
+   
+}
+/* Menu item home for section */
+.mnav-item-home .mnav-item-display { 
+   font-size: 2.3rem;
+   
+}
+/* Menu item not home for section */
+.mnav-item-not_home  .mnav-item-display { 
+   font-size: 1.9rem;
 
 }
+/* Menu item icon */
+.mnav-item-not_home  .mnav-item-display .material-icons{ 
+   font-size: 1.6rem;
+   color: rgba(248, 233, 233, 0.39);
+}
 
-.mobile-navigation-item-not_home > a { 
+/* .mnav-item-display> a { 
    font-size: 1.8rem;
    margin-left: 2rem;
-}
+} */
 
-.mobile-navigation-item-active { }
+.mnav-item-active { }
 
 
 

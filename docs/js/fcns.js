@@ -1,4 +1,5 @@
 function createDataTable(id,y) {
+    if(document.querySelector(id)){
     var cols = y.shift().map(v => { return {title:v}})
     new DataTable(id, {
         columns: cols,
@@ -7,8 +8,10 @@ function createDataTable(id,y) {
         ordering:false,
         lengthChange: false,
         info:false,
-        paging:false
+        paging:false,
+        
     });
+    }
 }
 
 

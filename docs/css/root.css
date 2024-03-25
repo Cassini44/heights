@@ -3,14 +3,38 @@
 
     /* --primary-color: #252F3E;
      --primary-color: #324b5b;
-    --accent-color-1 : #e9530d;
-    --accent-color-1: #252F3E; */
+    --accent-color-2 : #e9530d;
+    --primary-color-shade-lighter: #252F3E; */
 
     /* --primary-color: #094c79; */
+    /* --primary-color: #3b7092; */
     --primary-color: #2b414f;
-    --accent-color-1: color-mix(in srgb,var(--primary-color),#ffffff 15%);
-    --accent-color-3 : color-mix(in srgb,var(--primary-color),#5698e2 100%);
+    --primary-color-shade-lighter: color-mix(in srgb,var(--primary-color),#ffffff 15%);
+    --accent-color-1: #F1F1E6;
+    --accent-color-2 : #FF331F;
+    --accent-color-3 : color-mix(in srgb,var(--primary-color),#C78226 100%);
+    --accent-color-4 : #e9e9e993;
+    --accent-color-5 : #D00000;
+    --accent-color-6: #ffc810;
+    --accent-color-7 : #A2FAA3;
+    --accent-color-8 : #92C9B1;
+
+    --white1: #fbfff16c;
+    --red1: #FF331F;
+
+    /*Elements*/
+    /*----*/
+    --h1-color : --var(--text-black);
+
+    /*----*/
+
+
+
+    
+
+    
     --accent-border-grey : #cccccc;
+    --accent-border-grey-darker : #a0a0a0;
 
     --carbon_fiber : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAQAAAC/mnxTAAAAIUlEQVR4AWPc7sywl4GBgUSScTsD6YBsbYPNkaOOHHUkALSqN8mc6mmTAAAAAElFTkSuQmCC");
     
@@ -23,8 +47,6 @@
     --grey2    : #FCFCFC;
     --warm-light    : #dfdfdf;
     --white-tinted:#fefff7;
-    --yellow: #ffc810;
-
     /* -------------------------------------------------------------------------- */
     --font1 : 'Public Sans';
     --font2 : 'Source Sans 3';
@@ -32,18 +54,14 @@
     --icon_font-fontawesome : 'FontAwesome';
     --icon_font-material_icons_basic : 'Material Icons';
     /* -------------------------------------------------------------------------- */
-
     --icon-file : '\f0f6';
     --icon-file-pdf : '\f1c1';
     --icon-file-text-solid : '\f15c';
     --icon-file-multi : '\f0c5';
-
     --icon-phone : '\f095';
     --icon-phone-square: : '\f87b';
-
     --icon-check: : '\f00c';
     --icon-check-circle: : '\f05d';
-
     --icon-arrow-dropdown : '\f0d7';
     --icon-arrow-dropdown-bold : '\f078';
     --icon-arrow-right : '\f0da';
@@ -57,7 +75,6 @@
     --icon-sign_in : '\f090';
     --icon-road : '\f018';
     --icon-calender : '\f133';
-
 }
 
 
