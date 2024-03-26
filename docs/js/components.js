@@ -389,11 +389,7 @@ const core_components = {
                 <li class="menu-top"><a href="seniors-home.html" class="navigation-menu-item">Seniors</a>
                     ${navigations.generateNavigation('seniors',true)}
                 </li>
-                <li class="menu-top"><a href="teens-home.html" class="navigation-menu-item">Helpful Information</a>
-                    <ul>
-                        <li ><a href="#">Option 1</a></li>
-                    </ul>
-                </li>
+                <!-- <li class="menu-top"><a href="teens-home.html" class="navigation-menu-item">Helpful Information</a> <ul> <li ><a href="#">Option 1</a></li> </ul> </li> -->
 
                 <!------>
                 <!------>
@@ -473,7 +469,7 @@ const core_components = {
 /*//!〓〓〓〓〓〓〓            MOBILE          〓〓〓〓〓〓〓〓〓〓〓 */
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
-var l = console.log
+
 
 
 
@@ -495,7 +491,7 @@ const mobileMenu = {
 
 
     init() {
-        l(1)
+       
         var menublock =  mobileMenu.menu_toggle_element
 
         if(!menublock){console.log('No mobile menu for this page');return}
@@ -587,6 +583,8 @@ const mobileMenu = {
 
 const locations = {
 
+    breakpointForMobileCalendar() {return window.innerWidth >= 846} ,
+
 
     programs: {
         teen_classes : [
@@ -633,16 +631,19 @@ const locations = {
 
     },
 
+    
+
 
     generateLocations() {
         
-        
+        var breakpoint = locations.breakpointForMobileCalendar()
         var htmlForLocations = locations.programs.teen_classes.reduce((acc,v,i)=>{
 
             var {address_display,address_src,calender_api,calender_src,name} = v
 
-            var src_calender = `https://www.google.com/calendar/embed?src=${calender_src}`&&''
-            var src_calender = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ&q=${address_src}`&&''
+            var src_calender = breakpoint ? `https://www.google.com/calendar/embed?src=${calender_src}` : ''
+            
+            var src_maps = `https://www.google.com/maps/embed/v1/place?key=AIzaSyDtc2syrq3Ra90yZ8WoB170PT7BvUivVbQ&q=${address_src}`
 
             var y = `
             <div class="loc-container ${!i ? 'active-loc' : ''}" data-class_location = "${name}">
@@ -651,7 +652,7 @@ const locations = {
     
                 <div class="loc-calender">
                         <iframe 
-                        width="100%" height="100%" 
+                        width="100%" height="100%" onload="registerIframeLoad()"
                         src="${src_calender}">
                     </iframe>
                     
@@ -660,12 +661,19 @@ const locations = {
                 
     
                 <div class="loc-map">
-                    <iframe width="100%" height="100%"  loading="lazy" 
+                    <iframe width="100%" height="100%"   onload="registerIframeLoad()"
                     allowfullscreen
                     referrerpolicy="no-referrer-when-downgrade" 
-                    src=" ${src_calender} ">
+                    src=" ${src_maps} ">
                     </iframe>
                 </div>
+
+
+                <div class="loc-calender-mobile">
+                    <div ><table data-class_location_mobile_cal = "${name}" style="width:90;table-layout:fixed;"></table></div>
+                </div>
+
+
             </div>
     
     
@@ -680,6 +688,9 @@ const locations = {
         },'')
         
         return htmlForLocations
+
+
+
         
 
 

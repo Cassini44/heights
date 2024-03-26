@@ -1,7 +1,34 @@
 body{
     background-image: unset ;
     background-color: var(--primary-color);
+    height: 100vh;
 }
+
+.MAIN-GRID {
+  height:100%;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  grid-template-areas: "login" "footer";
+}
+
+
+#c-footer .footer-login {
+  grid-area: f4;
+  text-align: center;
+  color: #dbd8d8;
+  font-size: 1.2rem;
+}
+
+#login-main {
+  grid-area: login;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* --------------------- */
+
 
 #login-input .or-seperator-block {
   width:max(100%,12rem);
@@ -34,16 +61,6 @@ body{
 }
 
 
-#login-main {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-
-
-
 
 #login-container {
     background-image: var(--carbon_fiber);
@@ -52,7 +69,7 @@ body{
     width:40rem;
     border-radius: 5%;
     display: grid;
-    grid-template-rows: 30% 50% 20%;
+    /* grid-template-rows: 30% 50% 20%; */
 
     /* grid-template-rows: 1fr 3fr 1fr; */
 
@@ -66,7 +83,7 @@ body{
       height: 100vh;
       width: 100vw;
       border-radius: unset;
-      
+      grid-template-rows: 30% 50% 20%;
 
     }
 

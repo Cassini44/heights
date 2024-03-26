@@ -5,7 +5,7 @@
 }
 
 .location-selector {
-    
+  cursor: pointer;
     padding: 1.5rem;
     column-gap: 2rem;
     display: grid;
@@ -21,6 +21,7 @@
 
 }
 .location-option > span {
+    
     pointer-events: none;
 }
 
@@ -52,15 +53,16 @@
 .loc-container.active-loc {
     display: grid!important;
 }
-
-.loc-container {
-    display:none;
-    grid-template-areas: "addr addr" "cal map";
-    grid-template-rows: 5rem 30vh;
-    grid-template-columns: 1fr 0.75fr;
-    grid-gap: 2rem;
+.loc-container{
+  display:none;
 }
 
+
+/*  */
+
+.loc-calender-mobile{
+  grid-area: mob;
+}
 
 .loc-address {
     grid-area: addr;
@@ -77,6 +79,52 @@
 .loc-map {
  grid-area: map;
 }
+
+
+
+
+@media screen and (max-width: 845px) {
+
+
+  .loc-container {
+    justify-items: center;
+    width:90%;
+    grid-template-areas: "addr" "map" "mob";
+
+    grid-template-rows: 5rem 30vh auto ;
+    grid-gap: 2rem;
+  }
+
+  .loc-calender {
+    display: none;
+  }
+
+}
+
+
+
+
+@media screen and (min-width: 846px) {
+
+  .loc-container {
+    display:none;
+    grid-template-areas: "addr addr" "cal map";
+    
+    grid-template-rows: 5rem 45vh;
+    grid-template-columns: 1fr 0.75fr;
+    grid-gap: 2rem;
+}
+
+  .loc-calender-mobile {
+    display: none;
+  }
+
+}
+
+
+
+/*  */
+
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
 /* ------------------------------- */

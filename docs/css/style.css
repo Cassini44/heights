@@ -29,7 +29,12 @@
    align-items: center;
 }
 
-
+.icon-join-box.external-link {
+   width: max-content!important;
+}
+.icon-join-box.external-link:hover  {
+   background-color: var(--accent-color-4);
+}
 
 .external-link{
    color:rgba(62, 62, 65, 0.788);
@@ -55,8 +60,9 @@
 }
 
 .text-link{
-   text-decoration: underline;
-   color:rgb(89, 89, 248);
+   font-weight: 900;
+   
+   color:rgb(89, 153, 248);
 }
 
 
