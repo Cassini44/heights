@@ -257,7 +257,7 @@ const navigations = {
                 },
                 {
                     display: 'Abbreviated Program',
-                    link: 'adults-Abbreviated.html',
+                    link: 'adults-abbreviated.html',
                     currentpageTitle: 'Ohio Adult Abbreviated Program'
                 },
                 {
