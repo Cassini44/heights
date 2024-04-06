@@ -1,21 +1,7 @@
-var iframeLoadCheck = 0
-var num_of_iframes;
 
 
-function registerIframeLoad() {
-    const iframesCount = [...document.querySelectorAll('iframe')].length
-    iframeLoadCheck++
-    console.log(iframeLoadCheck)
-    if(iframesCount === iframeLoadCheck){
-        document.getElementById('location-load-spinner').style.display = 'none'
-        document.getElementById('hds-locations-outermost-container').style.display = 'grid'
 
-    }
-}
-
-
-window.onload = (function(){
-
+j.runOnPageLoad( function() {
 
     [...document.querySelectorAll('.location-option')].map((v)=>{
         v.addEventListener("click",locSelection.click)
@@ -23,26 +9,23 @@ window.onload = (function(){
     locSelection.current_active = document.querySelector('.location-option.active-location').dataset.class_location
     
     if(!locations.breakpointForMobileCalendar()) {
-        gapi.load("client", {
-        callback: function () {
-            mobileCalendar.loadMobileCalendar();
-            
-            
-        },
+            gapi.load("client", {
+            callback: function () {
+                mobileCalendar.loadMobileCalendar();
+                
+            },
         });
     }
-
-
 
 })
 
 
-function afterIframesLoad () {
-    console.log('all loaded')
-}
+
+/* -------------------------------------------------------------------------- */
 
 
 
+//# Logic for switching selections in the teen driving schools page
 const locSelection = {
     current_active:'',
 
@@ -65,6 +48,8 @@ const locSelection = {
 
 
 
+
+//#If the mobile breakpoint is hit, this object will load up the mobile version of the calendars
 const mobileCalendar = {
 
     loadMobileCalendar() {
@@ -145,16 +130,7 @@ const mobileCalendar = {
             console.log('Error: ' + reason.result.error.message);
         });
     }
-
-
-
-
-
-
-
-
 }
-
 
 
 

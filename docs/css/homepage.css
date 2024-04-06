@@ -16,36 +16,63 @@
     width: 75%;
  }
 
- .cards-text-summary {
-   font-size: 1.7rem;
-   
-
- }
 
 
 
 
+ /* -------------------------------------------------------------------------- */
+
+ #c-banner {
+   grid-area: banner;
+   background-color: var(--halftone_yellow) !important;
+   grid-template-rows: 200px 2fr;
+   align-content: center;
+   display: grid;
+}
 
 
 
- .title-image-overlay {
-   text-wrap: nowrap;
-    position: absolute;
-    z-index: 1;
-    line-height: 0.8;
-    font-weight: 700;
-    letter-spacing: 0.05em;
-    /* text-shadow: -2px 4px 7px black; */
-    font-size: 3.7rem;
-    color: rgba(66, 66, 66, 0.815);
- }
 
+#banner-cards-container{
+   margin-bottom: 50px;
+   display: flex;
+   justify-content: center;
+   HEIGHT: 100%;
+   WIDTH: 100%;
+}
+
+.banner-title-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.banner-title-text {
+   font-family: "Roboto Condensed";
+   /* text-wrap: nowrap; */
+   position: absolute;
+   z-index: 1;
+   line-height: 1.5;
+   font-weight: 700;
+   letter-spacing: 0.05em;
+   /* -webkit-text-stroke: azure; */
+   text-shadow: 10px 11px 20px #acacac5c;
+   font-size: 4.7rem;
+   color: #495867;
+}
+
+
+/* -------------------------------------------------------------------------- */
  
- #logos-container{
-    display: flex;
-    flex-direction: row;
-    
- }
+
+
+ #logos-container {
+   /* width: 100vw; */
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-end;
+}
 
 
  .inline-logo {
@@ -58,7 +85,7 @@
 }
 
 
-
+/* -------------------------------------------------------------------------- */
 
 #main-info {
    /* grid-area: 1 / 1 / 100/ 100; */
@@ -113,10 +140,12 @@
 @media screen and (min-width: 481px) and (max-width: 845px) { 
    #main-info { grid-template-columns: 1fr; }
    #main-info-col2 {display: none; }
+  
 }
 
 /* Phone --------------------*/
 @media screen and (max-width: 480px) { 
    #main-info { grid-template-columns: 1fr; }
    #main-info-col2 {display: none; }
+   
 }

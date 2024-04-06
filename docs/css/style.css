@@ -196,7 +196,7 @@ table.dataTable.no-footer{
    font-size: 1.3rem;
    font-family: "source sans pro";
    justify-self: center;
-   /* width: 90%; */
+   width: 90%;
    justify-content: center;
    display: flex;
    align-items: center;
@@ -228,10 +228,13 @@ table.dataTable.no-footer{
 
 .cards-text-container {
    margin: 20px 20px;
-   text-align: center;
+   text-align: unset;
    font-family: "Source Sans 3";
 }
 
+.cards-text-summary {
+   font-size: 1.7rem;
+ }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
@@ -252,6 +255,13 @@ table.dataTable.no-footer{
 
 /* In betweena phone and desktop --------------------*/
 @media screen and (min-width: 481px) and (max-width: 845px) { 
+   .cards-text-container {
+      margin: 20px 20px;
+      text-align: unset;
+      font-family: "Source Sans 3";
+   }
+
+
    .cards-outermost-container {
        flex-wrap: wrap;
        flex-direction: row;
@@ -271,6 +281,11 @@ table.dataTable.no-footer{
 
 /* Phone --------------------*/
 @media screen and (max-width: 480px) { 
+   .cards-text-container {
+      margin: 20px 20px;
+      text-align: unset;
+      font-family: "Source Sans 3";
+   }
    .cards-outermost-container {
        flex-wrap: wrap;
        flex-direction: row;

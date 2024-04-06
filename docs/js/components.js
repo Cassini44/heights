@@ -197,13 +197,6 @@ const navigations = {
      * link -  destination of navigation item
      * currentpageTitle - if this property matches the current documents title, it styles that list item with active-navigation-item
      */
-
-    /**
-     * display - what actually is shown to the user
-     * link -  destination of navigation item
-     * currentpageTitle - if this property matches the current documents title, it styles that list item with active-navigation-item
-     */
-
     sections: {
         teens: {
             section_title: 'Teens',
@@ -364,6 +357,9 @@ const navigations = {
 
 
 const core_components = {
+    /* A bit of a design flaw, since mobile nav
+      is generated with a core component existing here
+     */
 
     header : `
     <a href="index.html"class="heights-logo"><img class="heights-logo" src="images/heights_logo_1.png"></a>
@@ -491,7 +487,7 @@ const mobileMenu = {
 
 
     init() {
-       
+        
         var menublock =  mobileMenu.menu_toggle_element
 
         if(!menublock){console.log('No mobile menu for this page');return}
@@ -532,7 +528,7 @@ const mobileMenu = {
     },
 
 
-   calcMenuHeight(isopening) {
+    calcMenuHeight(isopening) {
     var popup = mobileMenu.mobile_popup_element
     var menublock = mobileMenu.menu_toggle_element.getBoundingClientRect()
     var header = mobileMenu.header_element.getBoundingClientRect()
@@ -547,10 +543,10 @@ const mobileMenu = {
     popup.style.height = `${space}px`
     popup.style.display = 'flex' //~Opens the popup
 
-   },
+    },
 
-   menuClick(x) {
-    
+    menuClick(x) {
+
     var icon = x.querySelector('i')
     var block = x.querySelector('mnav-block')
     var menu = x.nextElementSibling
@@ -568,12 +564,12 @@ const mobileMenu = {
         menu.classList.remove('mnav-block-active')
         
     }
-    
 
-    
-    
 
-   }
+
+
+
+    }
 
    
 
@@ -581,11 +577,14 @@ const mobileMenu = {
 
 
 
+
+/**The output of this is generateLocations(), which 'programs' feeds into */
 const locations = {
 
     breakpointForMobileCalendar() {return window.innerWidth >= 846} ,
 
 
+    /**Where all location data is stored */
     programs: {
         teen_classes : [
 
@@ -633,7 +632,7 @@ const locations = {
 
     
 
-
+    /**Generates the html for the teens locations page */
     generateLocations() {
         
         var breakpoint = locations.breakpointForMobileCalendar()
@@ -652,7 +651,7 @@ const locations = {
     
                 <div class="loc-calender">
                         <iframe 
-                        width="100%" height="100%" onload="registerIframeLoad()"
+                        width="100%" height="100%" onload="registerIframeLoad()" data-hds_iframe="1"
                         src="${src_calender}">
                     </iframe>
                     
@@ -661,7 +660,7 @@ const locations = {
                 
     
                 <div class="loc-map">
-                    <iframe width="100%" height="100%"   onload="registerIframeLoad()"
+                    <iframe width="100%" height="100%"   onload="registerIframeLoad()" data-hds_iframe="1"
                     allowfullscreen
                     referrerpolicy="no-referrer-when-downgrade" 
                     src=" ${src_maps} ">

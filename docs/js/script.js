@@ -5,18 +5,38 @@
 
 
 
-// LOADS ON EVERY PAGE
-window.onload = (function(){
-    mobileMenu.init()
 
+
+
+
+j.runOnPageLoad( () => {
+    mobileMenu.init()
     loadTables.teen_driving_homepage()
     loadTables.adult_lessons()
     loadTables.adult_remedial()
     loadTables.adult_abbreviated()
 
+    console.table(j.q('*').reduce((acc,v)=>{
+        var rect = v.getBoundingClientRect()
+        var  width = rect.width
+        if(width && (v.id === 'c-mobile' || v.id === 'c-header')) {
+
+            acc.push([
+                v.id,
+                width,
+                
+            ])
+        }
+        return acc
+    },[]).sort((a,b)=>{return a[1] - b[1]}))
 })
 
 
+/** Obviously, this data shouldnt be hardcoded into an object but without database access
+ *  (at current time in development) this must be done to show the client what the pages will look
+ *  like while still developing the general path that this script will take when pulling from the
+ *  database
+ */
 const loadTables = {
     register_button: `<button class="register_button_table">Enroll</button>`,
     teen_driving_homepage() {

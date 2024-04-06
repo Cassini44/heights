@@ -81,6 +81,7 @@
 
 
 *{
+  
   box-sizing: border-box;
 }
 html{
@@ -92,6 +93,8 @@ a {
   color: unset;
 }
 body {
+  /* display: flex; */
+  /* width: 100vw !important; */
   background-image: var(--carbon_fiber);
   margin:0;
 }
