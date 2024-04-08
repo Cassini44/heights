@@ -108,22 +108,22 @@ function registerIframeLoad() {
 
 
 
-function updateSize() {
-    document.querySelector("#height").textContent = window.innerHeight;
-    document.querySelector("#width").textContent = window.innerWidth;
-}
+// function updateSize() {
+//     document.querySelector("#height").textContent = window.innerHeight;
+//     document.querySelector("#width").textContent = window.innerWidth;
+// }
 
-j.runOnPageLoad(()=>{
+// j.runOnPageLoad(()=>{
     
-    j.insertHTML(`
-    <div class="modal-container">
-    <div>X:<span id="width">0</span></div>
-    <div>Y:<span id="height">0</span></div>
-    <div>${j.detectMobile()}</div>
-    </div>
-    `)
-    updateSize();
-    window.addEventListener("resize", updateSize);
-})
+//     j.insertHTML(`
+//     <div class="modal-container">
+//     <div>X:<span id="width">0</span></div>
+//     <div>Y:<span id="height">0</span></div>
+//     <div>${j.detectMobile()}</div>
+//     </div>
+//     `)
+//     updateSize();
+//     window.addEventListener("resize", updateSize);
+// })
 
 

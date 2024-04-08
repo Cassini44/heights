@@ -82,12 +82,13 @@
 
 #c-footer .footer-2 {
    grid-area: f2;
-   
 }
+
 #c-footer .footer-3 {
    grid-area: f3;
    margin-right: 5rem;
 }
+
 #c-footer .footer-4 {
    text-wrap: nowrap!important;
    grid-area: f4;
@@ -109,7 +110,6 @@
 #c-footer .footer-info-title {
    letter-spacing: 0.18rem;
 }
-
 
 #c-footer .footer-info-title hr {
    width: 5rem;
@@ -204,8 +204,7 @@ a.call-office{ border: 0.052vw solid white; border-radius: 1rem; background-colo
    cursor: pointer;
    display: inline-block;
    font-weight: 700;
-   margin-right: .5rem;
-   padding: 1rem 2rem;
+   padding: 1rem 1.5rem 1rem 1.5rem;
 
    text-align: center;
    text-decoration: none;
@@ -379,11 +378,11 @@ div.mnav-block div:not(:last-child) {
 
    .call-office { display: none!important;}
    .navigation-menu-container{display: none !important;}
-   #c-footer {grid-template-areas: "f1 f1 f1" "f4 f4 f4"!important;}
+   #c-footer {grid-template-areas: "f1 f1 f1"!important;}
    #c-footer .footer-2{ display: none!important; }
    #c-footer .footer-3{ display: none!important; }
    #c-footer .footer-4{ display: none!important; }
-   .banner-title-text {font-size: 3.5rem!important;}
+
 
 
 
@@ -399,7 +398,16 @@ div.mnav-block div:not(:last-child) {
    #c-footer .footer-2{ display: none!important; }
    #c-footer .footer-3{ display: none!important; }
    #c-footer .footer-4{ display: none!important; }
-   .banner-title-text {font-size: 3.5rem!important;}
+
+
+   
+
+}
+
+
+@media screen and (max-width: 350px) { 
+   .header-flex{flex-wrap: wrap;}
+   #login-button-text.login-button {display: flex;justify-content: center;width: 100%;}
 
    
 

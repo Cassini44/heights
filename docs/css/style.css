@@ -192,7 +192,18 @@ table.dataTable.no-footer{
 
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+#banner-cards-container{
+   margin-bottom: 50px;
+   display: flex;
+   justify-content: center;
+   HEIGHT: 100%;
+   WIDTH: 100%;
+}
+
+
+
 .cards-outermost-container {
+   
    font-size: 1.3rem;
    font-family: "source sans pro";
    justify-self: center;
@@ -264,15 +275,16 @@ table.dataTable.no-footer{
 
 
    .cards-outermost-container {
+      width:100% !important;
        flex-wrap: wrap;
        flex-direction: row;
        row-gap: 20px;
 
    }
    .cards-container{
-      width: 95% !important;
+      width: 100% !important;
       grid-template-rows: 300px 200px !important;
-      height: 450px !important;
+      height: 500px !important;
       
 
 
@@ -288,14 +300,15 @@ table.dataTable.no-footer{
       font-family: "Source Sans 3";
    }
    .cards-outermost-container {
+      width:100% !important;
        flex-wrap: wrap;
        flex-direction: row;
        row-gap: 10px;
    }
    .cards-container{
-      width: 95% !important;
+      width: 100% !important;
       grid-template-rows: 300px 200px !important;
-      height: 450px !important;
+      height: 500px !important;
 
 
 

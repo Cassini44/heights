@@ -196,19 +196,15 @@
      }
      
 
+}
 
 
 
+/* Very small, possibly the samsung fold */
+@media screen and (max-width: 320px) { 
+   
 
-
-
-
-
-
-
-
-
-
+   
 
 }
 
