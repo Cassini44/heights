@@ -27,7 +27,7 @@
    background-color: var(--halftone_yellow) !important;
    grid-template-rows: 200px 2fr;
    align-content: center;
-   box-shadow: 10px 11px 20px #acacac5c;;
+   /* box-shadow: 10px 11px 20px #acacac5c; */
    /* outline: 2px solid black; */
    display: grid;
 }
