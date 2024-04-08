@@ -5,9 +5,8 @@
 
 .MAIN-GRID {
    display: grid;
-   /* grid-template-columns:100%; */
+   grid-template-columns:100%;
    
-
 
    grid-template-rows: 80px max-content max-content max-content max-content;
    grid-template-areas:

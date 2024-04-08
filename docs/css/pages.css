@@ -8,22 +8,25 @@
     font-family: "Roboto";
     color: var(--h1-color); 
     border-bottom: 1px solid var(--accent-color-4);
-
     font-size: clamp(2.5rem, 7vw, 4rem);
-    /* white-space: nowrap;  */
     line-height: 10rem; 
     margin-bottom:3rem 
 }
 
+
+
+
 .body-text > h2{
     font-family: "Roboto";
-    
     color: var(--accent-color-2); 
     font-size: clamp(1.7rem, 7vw, 2rem);
     /* white-space: nowrap;  */
 }
 
-/*~〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
 .page-ux-img-container {
     display: flex;
@@ -31,11 +34,11 @@
     width: 100%;
     justify-content: center;
 }
+
+
 .page-ux-img{   
     height: 30vh;
-
 }
-
 
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
@@ -53,11 +56,9 @@
     font-size: 2.5rem;
     font-family: "source sans 3";
     font-weight: 900;
-    
-
-
     height: 8rem;
 }
+
 
 
 
@@ -71,12 +72,6 @@
 /*General scheme for body of a page*/
 
 .body-text h1,.body-text p,.body-text ul,.body-text h2 { margin:1.2rem; }
-
-
-
-
-
-
 
 
 .body-text p { font-size: 2rem; line-height: 3rem; }
@@ -143,13 +138,11 @@
     .page-ux .sidebar-navigation ul li.sub-navigation-item{ font-size: 1.8rem; }
     .page-ux .sidebar-navigation ul a{ width:100%; display: block; }
     .page-ux .sidebar-navigation ul .material-icons { font-size:1.5rem; }
+    .page-ux-col2 {padding: 5rem; }
     
 }
  
-@media screen and (min-width: 1185px) { 
-    .page-ux-col2 {padding: 5rem; }
-    
- }
+
 
 
 
@@ -185,16 +178,23 @@
     .page-ux .page-ux-col3 .sidebar-section,.page-ux .page-ux-col3 h1{ margin-left: 1rem; margin-top: 2rem; }
     .page-ux .page-ux-col3{margin-bottom: 30px;}
     .page-ux-col2 {padding: 0.5rem; }
-
-    
-
-
-
     .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
-    
     table.dataTable.no-footer{width: 90%;}
-
     .register_button_table {padding: 20%  !important;}
+
+
+    .MAIN-GRID {
+        display: grid;
+        /* grid-template-columns:100%; */
+        
+        grid-template-rows: 80px max-content max-content max-content;
+        grid-template-areas:
+        "header"
+        "body"
+        "footer"
+        "mobile"
+     }
+     
 
 
 

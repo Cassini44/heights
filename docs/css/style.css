@@ -241,14 +241,15 @@ table.dataTable.no-footer{
 
 
 /* Small laptop? --------------------*/
-@media screen and (min-width: 846px) and (max-width: 1185px) { 
+@media screen and (min-width: 846px) and (max-width: 1185px) {
    .cards-outermost-container {
-       flex-wrap: wrap;
-       flex-direction: row;
-       flex-basis: content;
+      flex-wrap: wrap;
+      flex-direction: row;
+      flex-basis: content;
    }
-   .cards-container{
-       flex-basis: calc(50% - 20px);
+
+   .cards-container {
+      flex-basis: calc(50% - 20px);
    }
 }
 
@@ -300,5 +301,24 @@ table.dataTable.no-footer{
 
    }
    
+}
+
+.modal-container {
+   width: 50vw;
+   height: 50vh;
+   position: fixed;
+   translate: -50% -50%;
+   top: 50%;
+   /* right: 50%; */
+   left: 50%;
+   z-index: 1000;
+   background-color: #0000003d;
+   display: grid;
+   font-size: 10vw;
+   opacity: 150;
+   color: white;
+   flex-direction: column;
+   justify-items: center;
+   align-items: center;
 }
 
