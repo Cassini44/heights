@@ -39,6 +39,16 @@ j.runOnPageLoad( () => {
  */
 const loadTables = {
     register_button: `<button class="register_button_table">Enroll</button>`,
+
+    fixFormatsFirst(x) {
+        return x.map((v,i)=>{ 
+            if(i) {
+                v[0] = v[0]
+                v[1] = v[1]
+            }
+        })
+    },
+
     teen_driving_homepage() {
 
         createDataTable('#courses-teen-all',[

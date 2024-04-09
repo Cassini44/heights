@@ -179,10 +179,11 @@ const navigations = {
                  <span>Call</span>
              </a>
  
- 
+       
              <div class="footer-4" id="mobile-menu-copyright">
-                 <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
+             <!-- <span>© 1999 - ${new Date().getFullYear()} Heights Driving School. All rights reserved. info@heightsdriving.com</span>-->
              </div>
+            
  
             
          
@@ -446,7 +447,7 @@ const core_components = {
             </div>
         </div>
         <div class="footer-4">
-            <span>© 1999 - 2024 Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
+            <span>© 1999 - ${new Date().getFullYear()+1} Heights Driving School. All rights reserved. I 440-449-3300 I info@heightsdriving.com</span>
         </div>
     `,
     mobile : `

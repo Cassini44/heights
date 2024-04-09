@@ -107,7 +107,6 @@
 
 
 
-
 @media screen and (min-width: 1185px) { 
     .page-ux {
         margin: 3vh 3vw 3vw 3vw;
@@ -142,12 +141,6 @@
     
 }
  
-
-
-
-
-
-
 /* Small laptop? --------------------*/
 @media screen and (min-width: 846px) and (max-width: 1185px) { 
     .page-ux .page-ux-col1 {display: none;}
@@ -159,8 +152,8 @@
 }
  
  
- /* In betweena phone and desktop --------------------*/
- @media screen and (min-width: 481px) and (max-width: 845px) { 
+/* In betweena phone and desktop --------------------*/
+@media screen and (min-width: 481px) and (max-width: 845px) { 
     .page-ux .page-ux-col1 {display: none;}
     .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; }
     .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
@@ -170,8 +163,8 @@
     .register_button_table {padding: 20%  !important;}
 
 }
- 
- /* Phone --------------------*/
+
+/* Phone --------------------*/
  @media screen and (max-width: 480px) { 
 
     .page-ux .page-ux-col1 {display: none;}
@@ -179,33 +172,30 @@
     .page-ux .page-ux-col3{margin-bottom: 30px;}
     .page-ux-col2 {padding: 0.5rem; }
     .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
-    table.dataTable.no-footer{width: 90%;}
-    .register_button_table {padding: 20%  !important;}
-
-
-    .MAIN-GRID {
+    table.dataTable.no-footer{width: 90%; font-size:1rem}
+    .register_button_table {padding: 10%  !important;}
+    .registration-table {padding: 0;}
+    table.dataTable tbody th, table.dataTable tbody td {padding: 1px !important;}
+    .page-ux-btn-container {
+        padding: 2rem;
+        column-gap: 2rem;
+        row-gap: 2rem;
         display: grid;
-        /* grid-template-columns:100%; */
-        
-        grid-template-rows: 80px max-content max-content max-content;
-        grid-template-areas:
-        "header"
-        "body"
-        "footer"
-        "mobile"
-     }
+        grid-template-columns: none;
+        align-content: center;
+        justify-content: center;
+    }
+    
+
+
+    
      
 
 }
 
-
-
 /* Very small, possibly the samsung fold */
 @media screen and (max-width: 320px) { 
-   
-
-   
-
+   /*EMPTY*/
 }
 
 

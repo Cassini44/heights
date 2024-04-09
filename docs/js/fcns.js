@@ -63,7 +63,32 @@ const j = {
         return toMatch.some((toMatchItem) => {
           return navigator.userAgent.match(toMatchItem);
         });
-      }
+    },
+
+    /**
+     * 
+     * @param {string} x name of css variable within :root
+     * @param {string} [value_to_change]  if present, will set the css variable to this new value
+     */
+    cssVar(x,value_to_change) {
+
+        
+       
+
+        var root = document.documentElement;
+        var current_value = getComputedStyle(document.querySelector(':root')).getPropertyValue(x);
+        
+        if(value_to_change){
+            root.style.setProperty(x,value_to_change)
+        }
+
+
+        var new_current_value = root.style.getPropertyValue(x)
+        console.log(`${current_value} ----> ${new_current_value}`)
+        return new_current_value||current_value
+      
+    }
+
 
 }
 
