@@ -9,6 +9,8 @@
 
 function createDataTable(id,y) {
 
+    y = loadTables.fixFormatsFirst(y)
+
     
     if(document.querySelector(id)){
     var cols = y.shift().map(v => { return {title:v,"width":20}})
@@ -37,16 +39,36 @@ function createDataTable(id,y) {
 
 /**Utility functions */
 const j = {
+
+    /**
+     * 
+     * @param {string} css_selector query selector string
+     * @returns 1d array of html elements
+     */
     q(css_selector) {return [...document.querySelectorAll(css_selector)]},
 
+    /**
+     * getElementById
+     * @param {string} id element ID 
+     * @returns element
+     */
     $(id) {return document.getElementById(id)},
+
 
     getClientRect(id) {return j.$(id).getBoundingClientRect()},
 
+    /**
+     * 
+     * @param {Function} fcn this function runs when the page loads
+     */
     runOnPageLoad(fcn) {window.addEventListener('load',fcn)},
 
     tsvToArray(x) { return x.split('\r\n').map(v=>v.split('\t')) },
 
+    /**
+     * 
+     * @param {string} html_string string to be added to end of html body for current page
+     */
     insertHTML(html_string) {[...document.getElementsByTagName('body')][0].insertAdjacentHTML('beforeend', html_string);},
 
     detectMobile() {
@@ -71,27 +93,26 @@ const j = {
      * @param {string} [value_to_change]  if present, will set the css variable to this new value
      */
     cssVar(x,value_to_change) {
-
-        
-       
-
         var root = document.documentElement;
         var current_value = getComputedStyle(document.querySelector(':root')).getPropertyValue(x);
         
         if(value_to_change){
             root.style.setProperty(x,value_to_change)
         }
-
-
         var new_current_value = root.style.getPropertyValue(x)
         console.log(`${current_value} ----> ${new_current_value}`)
         return new_current_value||current_value
-      
+    },
+
+    /**
+     * @param {string} x Value that will be wrappe din <span> tags
+     * @param {string} [span_attributes] Set the attributes for the span such as class. This will be inserted directly into the html text. A valid example: `class="test"`
+     */
+    wrapInSpan(x,span_attributes) {
+        return `<span ${span_attributes||''}>${x}</span>`
     }
 
-
 }
-
 
 
 

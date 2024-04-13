@@ -4,13 +4,23 @@
 
 
 /* .page-ux{height:100%;} */
+
+
+
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+.body-text h1,.body-text p,.body-text ul,.body-text h2,.body-text ol { margin:1.2rem; }
+
+
 .body-text > h1 {
     font-family: "Roboto";
-    color: var(--h1-color); 
+    color: var(--primary-color); 
     border-bottom: 1px solid var(--accent-color-4);
     font-size: clamp(2.5rem, 7vw, 4rem);
-    line-height: 10rem; 
-    margin-bottom:3rem 
+    line-height: 3rem; 
+    margin-bottom:5rem !important;
+    margin-top: 5rem!important;
+    padding-bottom: 3rem;
 }
 
 
@@ -25,8 +35,44 @@
 
 
 
+.body-text p { font-size: 2rem; line-height: 3rem; }
 
-/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+.body-text p.indent {
+    font-size: 1.6rem; 
+    line-height: 1.9rem;
+    border-left:1px solid rgba(128, 128, 128, 0.288);
+    padding-left: 1rem; 
+    margin-left:5rem;
+}
+
+
+
+.body-text li { 
+    font-size: 1.7rem; 
+}
+
+
+
+.body-text > :where(ul,ol) {
+    display: grid;
+    gap: 1rem;
+    list-style: inside;
+}
+
+
+.body-text ul li::marker {
+    content: "\f0da";
+    font-family: var(--icon_font-fontawesome);
+    color:var(--primary-color-shade-lighter);
+}
+
+
+
+
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 
 .page-ux-img-container {
     display: flex;
@@ -69,30 +115,10 @@
 
 
 
-/*General scheme for body of a page*/
 
-.body-text h1,.body-text p,.body-text ul,.body-text h2 { margin:1.2rem; }
-
-
-.body-text p { font-size: 2rem; line-height: 3rem; }
-
-
-.body-text p.indent {
-    font-size: 1.6rem; 
-    line-height: 1.9rem;
-    border-left:1px solid rgba(128, 128, 128, 0.288);
-    padding-left: 1rem; 
-    margin-left:5rem;
-}
-
-.body-text li { font-size: 1.7rem; }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
-.registration-table {
 
-    padding: 2rem;
-
-}
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 .dps-logo{ height: 5rem; }
@@ -155,12 +181,12 @@
 /* In betweena phone and desktop --------------------*/
 @media screen and (min-width: 481px) and (max-width: 845px) { 
     .page-ux .page-ux-col1 {display: none;}
-    .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; }
+    .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
     .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
     /* .page-ux-col2 {padding: 0.5rem; } */
 
     table.dataTable.no-footer{width: 100%;}
-    .register_button_table {padding: 20%  !important;}
+    /* .register_button_table {padding: 20%  !important;} */
 
 }
 
@@ -168,14 +194,12 @@
  @media screen and (max-width: 480px) { 
 
     .page-ux .page-ux-col1 {display: none;}
-    .page-ux .page-ux-col3 .sidebar-section,.page-ux .page-ux-col3 h1{ margin-left: 1rem; margin-top: 2rem; }
-    .page-ux .page-ux-col3{margin-bottom: 30px;}
+    .page-ux .page-ux-col3 .sidebar-section,.page-ux .page-ux-col3 h1{ margin-left: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
+    /* .page-ux .page-ux-col3{margin-bottom: 30px;} */
     .page-ux-col2 {padding: 0.5rem; }
-    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
-    table.dataTable.no-footer{width: 90%; font-size:1rem}
-    .register_button_table {padding: 10%  !important;}
-    .registration-table {padding: 0;}
-    table.dataTable tbody th, table.dataTable tbody td {padding: 1px !important;}
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); margin-bottom: 1rem;}
+    
+
     .page-ux-btn-container {
         padding: 2rem;
         column-gap: 2rem;

@@ -110,7 +110,7 @@
 }
 
 
-/* ------------------------------------------ */
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
 
 table.dataTable.no-footer{
    border-bottom:0px !important;
@@ -119,8 +119,8 @@ table.dataTable.no-footer{
 
 .dataTable.no-footer{
    margin-bottom: 2rem;
-  width: 70%;
-  font-size: 2rem;
+   width: 100%;
+   font-size: 2rem;
 
 }
 
@@ -136,16 +136,14 @@ table.dataTable.no-footer{
 
 
 .dataTable.no-footer .register_button_table {
-
     font-family: 'Public Sans';
-
-    font-size: 1.5rem;
-    line-height: .9;
+    
+    /* font-size: 1.5rem; */
+    /* line-height: .9; */
     color: #fff;
     background-color: var(--primary-color-shade-lighter);
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
+
+
     border: 0;
     border-radius: .25rem;
     cursor: pointer;
@@ -158,20 +156,34 @@ table.dataTable.no-footer{
 }
 
 
-/* ------------------------------------------ */
+.registration-table { padding: 2rem; margin-top: 5rem; }
 
+/* everything  */
+table.dataTable tbody th, table.dataTable tbody td {
+   padding:3px !important;
+}
 
-
-
-.vspacer-1 {
-   height: 6rem;
+/* headers*/
+ table.dataTable>thead>tr>th {
+   font-size: 2.5rem;
+   padding: 0!important;
+   /* padding-bottom: 1rem!important; */
+   background-color: var(--accent-color-6);
 }
 
 
+/* head row */
+table.dataTable>thead {
+   /* padding-bottom: 1rem!important; */
+   margin-bottom: 1rem !important;
+   /* background-color: var(--accent-color-6); */
+   box-shadow: 0px 3px 20px 2px #00000030;
+}
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
 
 
-/* -------------------------------------------------------------------------- */
-/* -------------------------------------------------------------------------- */
+
 
 
 
@@ -232,6 +244,10 @@ table.dataTable.no-footer{
  }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+.vspacer-1 {
+   height: 6rem;
+}
 
 
 
@@ -294,6 +310,31 @@ table.dataTable.no-footer{
       grid-template-rows: 300px 200px !important;
       height: 500px !important;
    }
+
+
+
+
+   .registration-table {
+      padding: 0;
+   }
+
+
+   .dataTable.no-footer .register_button_table{
+      font-size:1.5rem;
+      padding: 0.5rem 2.5rem;
+   }
+   
+   table.dataTable.no-footer{
+      width: 90%; 
+      font-size:1.5rem
+   }
+
+   table.dataTable tbody th, table.dataTable tbody td {
+      padding: 1px !important;
+   }
+
+   
+    
    
 }
 

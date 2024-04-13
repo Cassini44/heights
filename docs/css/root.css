@@ -7,8 +7,9 @@
 
   /* ------------------------------------------ */
 
-   
-  --primary-color: #495867;
+  --primary-color: #2f363d;
+  /* --primary-color: #495867; */
+  
   --primary-color-shade-lighter: color-mix(in srgb,var(--primary-color),#ffffff 15%);
   --accent-color-1: #F1F1E6;
   --accent-color-2 : #FF331F;
@@ -85,3 +86,8 @@ body { background-image: var(--carbon_fiber); margin:0; }
 /* --primary-color: #3b7092; */
 /* --primary-color: #2e659c; */
 /* --primary-color: #2b414f; */
+
+
+
+/* example 4102024 
+ example 4102024 */

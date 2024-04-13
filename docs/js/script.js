@@ -42,10 +42,12 @@ const loadTables = {
 
     fixFormatsFirst(x) {
         return x.map((v,i)=>{ 
-            if(i) {
-                v[0] = v[0]
-                v[1] = v[1]
-            }
+            
+                v[0] = j.wrapInSpan(v[0],'data-course-name')
+                v[1] = j.wrapInSpan(v[1],'data-price_column')
+                v[2] = j.wrapInSpan(v[2],'data-enroll-button')
+            
+            return v
         })
     },
 
