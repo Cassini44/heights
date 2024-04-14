@@ -9,7 +9,7 @@
 
 /*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
 /*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
-.body-text h1,.body-text p,.body-text ul,.body-text h2,.body-text ol { margin:1.2rem; }
+.body-text h1,.body-text p,.body-text ul,.body-text h2,.body-text ol,.body-text h3 { margin:1.2rem; }
 
 
 .body-text > h1 {
@@ -29,7 +29,14 @@
 .body-text > h2{
     font-family: "Roboto";
     color: var(--accent-color-2); 
+    margin-top: 5rem!important;
     font-size: clamp(1.7rem, 7vw, 2rem);
+    /* white-space: nowrap;  */
+}
+.body-text > h3{
+    font-family: "Roboto";
+    color: var(--accent-color-8); 
+    font-size: clamp(1.7rem, 6vw, 1.8rem);
     /* white-space: nowrap;  */
 }
 
@@ -40,33 +47,74 @@
 
 
 .body-text p.indent {
-    font-size: 1.6rem; 
-    line-height: 1.9rem;
-    border-left:1px solid rgba(128, 128, 128, 0.288);
-    padding-left: 1rem; 
-    margin-left:5rem;
+    font-style: italic;
+    background-color: #f8fff0;
+    font-size: 1.6rem;
+    /* line-height: 1.9rem; */
+    border-left: 1px solid rgba(128, 128, 128, 0.288);
+    padding-left: 1rem;
+    margin-left: 5rem;
 }
 
 
 
-.body-text li { 
-    font-size: 1.7rem; 
-}
+
 
 
 
 .body-text > :where(ul,ol) {
     display: grid;
     gap: 1rem;
-    list-style: inside;
+    list-style: outside;
+    margin-bottom: 3rem!important;
 }
 
 
 .body-text ul li::marker {
     content: "\f0da";
+    font-size: 1.6rem;
     font-family: var(--icon_font-fontawesome);
     color:var(--primary-color-shade-lighter);
 }
+.body-text ul li ul li::marker {
+    content: "-";
+    font-size: 1.3rem;
+    font-family: var(--icon_font-fontawesome);
+    color:var(--primary-color-shade-lighter);
+}
+
+.body-text li {
+    line-height: 3rem;
+    padding-left: 2rem;
+    font-size: 1.6rem;
+    /* color:grey; */
+}
+
+
+
+
+
+.body-text ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+  
+.body-text > ol > li {
+    counter-increment: step-counter;
+    
+}
+.body-text > ol > li::before {
+    margin-right: 2rem;
+    content: counter(step-counter);
+    background-color: var(--primary-color-shade-lighter);
+    color: white;
+    font-weight: bold;
+    padding: 0.2rem 0.9rem;
+}
+
+
+
 
 
 

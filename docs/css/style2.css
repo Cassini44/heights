@@ -19,26 +19,3 @@
 
 
 
-
-
-
-ol.custom-counter {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-  }
-  ol.custom-counter > li {
-    counter-increment: step-counter;
-    margin-bottom: 5px;
-  }
-  ol.custom-counter > li::before {
-    content: counter(step-counter);
-    margin-right: 20px;
-    font-size: 80%;
-    background-color: var(--primary-color-shade-lighter);
-    color: white;
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 0px;
-  }
-

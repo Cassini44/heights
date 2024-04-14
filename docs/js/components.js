@@ -216,19 +216,15 @@ const navigations = {
                     currentpageTitle: 'Ohio Classroom Locations'
                 },
                 {
-                    display: 'Zoom Classes',
-                    link: 'teens-virtual-classes.html',
-                    currentpageTitle: 'Ohio Virtual Driving Classes'
+                    display: 'Online Classes',
+                    link: 'teens-online-classes.html',
+                    currentpageTitle: 'Ohio Online Drivers Ed'
                 },
+                
                 {
                     display: 'High School Program',
                     link: 'teens-highschool-classes.html',
                     currentpageTitle: 'Ohio High School Drivers Ed'
-                },
-                {
-                    display: 'Online Classes',
-                    link: 'teens-online-classes.html',
-                    currentpageTitle: 'Ohio Online Drivers Ed'
                 },
                 {
                     display: 'Behind the Wheel',
