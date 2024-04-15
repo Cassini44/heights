@@ -12,6 +12,7 @@
   
   --primary-color-shade-lighter: color-mix(in srgb,var(--primary-color),#ffffff 15%);
   --accent-color-1: #F1F1E6;
+  
   --accent-color-2 : #FF331F;
   --accent-color-3 : color-mix(in srgb,var(--primary-color),#C78226 100%);
   --accent-color-4 : #e9e9e993;

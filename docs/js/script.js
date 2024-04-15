@@ -15,6 +15,8 @@ j.runOnPageLoad( () => {
     loadTables.adult_lessons()
     loadTables.adult_remedial()
     loadTables.adult_abbreviated()
+    loadTables.seniors()
+    loadTables.disability()
 
     console.table(j.q('*').reduce((acc,v)=>{
         var rect = v.getBoundingClientRect()
@@ -38,7 +40,7 @@ j.runOnPageLoad( () => {
  *  database
  */
 const loadTables = {
-    register_button: `<button class="register_button_table">Enroll</button>`,
+    register_button: `<button class="register_button_table"  onclick="location.href='https:\/\/login.heightsdriving.com/system/enroll';">Enroll</button>`,
 
     fixFormatsFirst(x) {
         return x.map((v,i)=>{ 
@@ -95,6 +97,21 @@ const loadTables = {
             ['Driving Only','$365',loadTables.register_button],
             ['In-Person Class + Driving','$85',loadTables.register_button],
             ['Online Class + Driving','$85',loadTables.register_button]
+        ])
+    },
+    disability() {
+
+        
+        createDataTable('#courses_evaluation',[
+            ['Course','Price',''],
+            ['Special Needs Enrollment','$375',loadTables.register_button],
+        ])
+    },
+    
+    seniors() {
+        createDataTable('#courses_senior',[
+            ['Course','Price',''],
+            ['Seniors Driving Evaluation','Call for Pricing',loadTables.register_button],
         ])
     },
 

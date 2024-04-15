@@ -147,12 +147,15 @@
 }
 
 .page-ux-btn {
+    cursor: pointer;
     font-size: 2.5rem;
     font-family: "source sans 3";
     font-weight: 900;
     height: 8rem;
+    background-color: var(--accent-color-1);
+    border: color-mix(in srgb, var(--accent-color-1), #797979ee 15%) solid 2px;
+    /* box-shadow: inset 1px 1px 20px 0px #dbdbdb; */
 }
-
 
 
 
