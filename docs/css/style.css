@@ -130,9 +130,11 @@ table.dataTable.no-footer{
 
 }
  
+
 .dataTable.no-footer td {
  border-bottom: 1px solid var(--accent-border-grey);
 }
+
 
 
 .dataTable.no-footer .register_button_table {
@@ -156,15 +158,13 @@ table.dataTable.no-footer{
 }
 
 
-.registration-table { padding: 2rem; margin-top: 5rem; }
-
 /* everything  */
 table.dataTable tbody th, table.dataTable tbody td {
    padding:3px !important;
 }
 
 /* headers*/
- table.dataTable>thead>tr>th {
+table.dataTable>thead>tr>th {
    font-size: 2.5rem;
    padding: 0!important;
    /* padding-bottom: 1rem!important; */
@@ -181,6 +181,27 @@ table.dataTable>thead {
 }
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+/* Types of tables */
+
+.registration-table { padding: 2rem; margin-top: 5rem; }
+
+.loc-calender-mobile{ padding: 2rem; margin-top: 2rem; font-family: "Roboto Condensed";}
+.loc-calender-mobile .dataTable.no-footer {margin-bottom: 0!important; }
+.loc-calender-mobile table.dataTable>thead>tr>th {background-color: #2d8cff52!important;}
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+
+
+hds-zoom {
+   display: flex;
+   height: 40vh;
+   padding: 2rem;
+}
+
+
+
 
 
 
@@ -325,7 +346,7 @@ table.dataTable>thead {
    }
    
    table.dataTable.no-footer{
-      width: 90%; 
+      /* width: 90%;  */
       font-size:1.5rem
    }
 

@@ -17,7 +17,8 @@
   --accent-color-3 : color-mix(in srgb,var(--primary-color),#C78226 100%);
   --accent-color-4 : #e9e9e993;
   --accent-color-5 : #D00000;
-  --accent-color-6: #ffc810;
+  --accent-color-6: #ffc810; 
+  /* #ffe48b */
   --accent-color-7 : #A2FAA3;
   --accent-color-8 : #92C9B1;
   --carbon_fiber : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAQAAAC/mnxTAAAAIUlEQVR4AWPc7sywl4GBgUSScTsD6YBsbYPNkaOOHHUkALSqN8mc6mmTAAAAAElFTkSuQmCC");

@@ -42,16 +42,25 @@ j.runOnPageLoad( () => {
 const loadTables = {
     register_button: `<button class="register_button_table"  onclick="location.href='https:\/\/login.heightsdriving.com/system/enroll';">Enroll</button>`,
 
-    fixFormatsFirst(x) {
-        return x.map((v,i)=>{ 
-            
-                v[0] = j.wrapInSpan(v[0],'data-course-name')
-                v[1] = j.wrapInSpan(v[1],'data-price_column')
-                v[2] = j.wrapInSpan(v[2],'data-enroll-button')
-            
-            return v
-        })
+    formatFunctions : {
+
+        enrollment(x) {
+            return x.map((v,i)=>{ 
+                
+                    v[0] = j.wrapInSpan(v[0],'data-course-name')
+                    v[1] = j.wrapInSpan(v[1],'data-price_column')
+                    v[2] = j.wrapInSpan(v[2],'data-enroll-button')
+                
+                return v
+            })
+        },
+
+
+
+
     },
+
+
 
     teen_driving_homepage() {
 
@@ -65,7 +74,7 @@ const loadTables = {
             ['IN PERSON CLASS','$175',loadTables.register_button],
             ['ONLINE CLASS','$80',loadTables.register_button],
             ['8 HR DRIVE','$435',loadTables.register_button]
-        ])
+        ],'enrollment')
     },
 
     adult_lessons() {
@@ -75,7 +84,7 @@ const loadTables = {
             ['6 Hours','$550',loadTables.register_button],
             ['4 Hours','$365',loadTables.register_button],
             ['Per 2 Hours','$180',loadTables.register_button]
-        ])
+        ],'enrollment')
     },
     
     adult_remedial() {
@@ -84,7 +93,7 @@ const loadTables = {
             ['Course','Price',''],
             ['In Person','$80',loadTables.register_button],
             ['Online','$80',loadTables.register_button]
-        ])
+        ],'enrollment')
     },
 
     adult_abbreviated() {
@@ -97,7 +106,7 @@ const loadTables = {
             ['Driving Only','$365',loadTables.register_button],
             ['In-Person Class + Driving','$85',loadTables.register_button],
             ['Online Class + Driving','$85',loadTables.register_button]
-        ])
+        ],'enrollment')
     },
     disability() {
 
@@ -105,14 +114,14 @@ const loadTables = {
         createDataTable('#courses_evaluation',[
             ['Course','Price',''],
             ['Special Needs Enrollment','$375',loadTables.register_button],
-        ])
+        ],'enrollment')
     },
     
     seniors() {
         createDataTable('#courses_senior',[
             ['Course','Price',''],
             ['Seniors Driving Evaluation','Call for Pricing',loadTables.register_button],
-        ])
+        ],'enrollment')
     },
 
 

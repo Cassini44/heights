@@ -6,16 +6,23 @@
 
 
 
+/**
+ * 
+ * @param {string} id The queryselector arg to find the element of tableLayout: 
+ * @param {[][]} y 2d array of data where first index is headers
+ * @param {string} formatfcn name of formatting function found in the loadtables object
+ * @param {string} scrollheight argument given to scrollY, locks the height of the table body to a certain ammount and creates a scrollbar
+ */
+function createDataTable(id,y,formatfcn,scrollheight) {
 
-function createDataTable(id,y) {
-
-    y = loadTables.fixFormatsFirst(y)
+    if(formatfcn) { y = loadTables.formatFunctions[formatfcn](y) }
+   
 
     
     if(document.querySelector(id)){
     var cols = y.shift().map(v => { return {title:v,"width":20}})
     new DataTable(id, {
-
+        scrollY : scrollheight??'',
         columns: cols,
         data: y,
         searching:false,
@@ -110,6 +117,10 @@ const j = {
      */
     wrapInSpan(x,span_attributes) {
         return `<span ${span_attributes||''}>${x}</span>`
+    },
+
+    getPageName() {
+        return window.location.pathname.split("/").pop().replace('.html','');
     }
 
 }

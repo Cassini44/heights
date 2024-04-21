@@ -53,7 +53,8 @@
     /* line-height: 1.9rem; */
     border-left: 1px solid rgba(128, 128, 128, 0.288);
     padding-left: 1rem;
-    margin-left: 5rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
 }
 
 
@@ -114,7 +115,10 @@
 }
 
 
-
+.inlist-header {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
 
 
 

@@ -59,6 +59,15 @@ class HdsLocations extends HTMLElement {
 customElements.define('hds-locations', HdsLocations);
 
 
+class HdsZoomCalendar extends HTMLElement {
+    connectedCallback() {
+        this.id = 'zoom-calendar'
+        this.innerHTML = `${locations.generateZoomCalendar()}`
+    }
+}
+customElements.define('hds-zoom', HdsZoomCalendar);
+
+
 
 
 
@@ -578,7 +587,7 @@ const mobileMenu = {
 /**The output of this is generateLocations(), which 'programs' feeds into */
 const locations = {
 
-    breakpointForMobileCalendar() {return window.innerWidth >= 846} ,
+    
 
 
     /**Where all location data is stored */
@@ -610,7 +619,14 @@ const locations = {
                 calender_api: 'lkv5mih5kmq4bpnjm5cjubfm3c@group.calendar.google.com'}
 
 
+
         ],
+
+        zoom : {
+            name:'zoom',
+            calender_src : '1dm7qqo40013dne78q08avhd6c%40group.calendar.google.com',
+            calender_api : '1dm7qqo40013dne78q08avhd6c@group.calendar.google.com'
+        },
 
         adult_abbreviated: {
             ["Mayfield Villlage"] : {
@@ -632,7 +648,7 @@ const locations = {
     /**Generates the html for the teens locations page */
     generateLocations() {
         
-        var breakpoint = locations.breakpointForMobileCalendar()
+        var breakpoint = mobileCalendar.breakpointForMobileCalendar()
         var htmlForLocations = locations.programs.teen_classes.reduce((acc,v,i)=>{
 
             var {address_display,address_src,calender_api,calender_src,name} = v
@@ -684,16 +700,120 @@ const locations = {
         },'')
         
         return htmlForLocations
-
-
-
+    },
+    /**Generates the html for the teens locations page */
+    generateZoomCalendar() {
         
+        var breakpoint = mobileCalendar.breakpointForMobileCalendar()
+        var calendar_data = locations.programs.zoom
+
+        var {calender_api,calender_src} = calendar_data
+
+        var src_calender = breakpoint ? `https://www.google.com/calendar/embed?src=${calender_src}` : ''
+
+        var htmlForLocations  = `
+        
+         
+
+            <div class="loc-calender">
+                    <iframe 
+                    width="100%" height="100%" onload="registerIframeLoad()" data-hds_iframe="1"
+                    src="${src_calender}" style="border: 1px solid #e7e5e500; filter: hue-rotate(312deg); outline-offset: 3px;">
+                </iframe>
+                
+            </div>
+
+            <div class="loc-calender-mobile">
+                <div><table data-class_location_mobile_cal = "zoom" style="width:90;table-layout:fixed;"></table></div>
+            </div>
+
+
+       
+
+
+        `
+        
+        return htmlForLocations
+    
 
 
     }
-
-
 }
 
 
 
+const mobileCalendar = {
+    breakpointForMobileCalendar() {return window.innerWidth >= 846},
+
+    
+    
+
+
+
+    printCalendar(calendarId,name,formatfunction,height) {
+    
+    
+        var apiKey = 'AIzaSyBksWZ8E6qnfN-Nlp8SG7myS-xHcED1kS0';
+    
+        var userTimeZone = "US/Eastern";
+    
+        // Initializes the client with the API key and the Translate API.
+        gapi.client.init({
+            'apiKey': apiKey,
+            // Discovery docs docs: https://developers.google.com/api-client-library/javascript/features/discovery
+            'discoveryDocs': ['https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest'],
+        }).then(function () {
+            // Use Google's "apis-explorer" for research: https://developers.google.com/apis-explorer/#s/calendar/v3/
+            // Events: list API docs: https://developers.google.com/calendar/v3/reference/events/list
+            
+            return gapi.client.calendar.events.list({
+                'calendarId': calendarId,
+                'timeZone': userTimeZone,
+                'singleEvents': true,
+                'timeMin': (new Date()).toISOString(), //gathers only events not happened yet
+                'maxResults': 50,
+                'orderBy': 'startTime'
+            });
+        }).then(function (response) {
+            // console.log(response.result.items)
+            if (response.result.items) {
+
+                var arr = [['Class','Date','Start','End']]
+    
+                
+                response.result.items.forEach(function(entry) {
+                    
+                    var startsAt = entry.start.dateTime
+                    var endsAt   = entry.end.dateTime
+                    var date = new Date(startsAt)
+                    var date2 = new Date(endsAt)
+    
+                    var datestring = date.toLocaleDateString('en-US')
+                    var starttime = date.toLocaleTimeString('en-US', { hour: 'numeric',minute: '2-digit', hour12: true })
+                    var endtime = date2.toLocaleTimeString('en-US', { hour: 'numeric',minute: '2-digit', hour12: true })
+                    console.log(entry)
+                    var location_name = entry.organizer.displayName
+                    var class_number = entry.summary
+
+                    datestring = datestring==='Invalid Date' ? '-' : datestring
+                    starttime = starttime==='Invalid Date' ? '-' : starttime
+                    endtime = endtime==='Invalid Date' ? '-' : endtime
+                    
+                    
+
+                    //Dont show if date is invalid
+                    if(datestring !== '-') {
+                        arr.push([class_number,datestring,starttime,endtime])
+                    }
+                    
+                });
+
+                createDataTable(`[data-class_location_mobile_cal="${name}"]`,arr,formatfunction,height)
+                
+            }
+    
+        }, function (reason) {
+            console.log('Error: ' + reason.result.error.message);
+        });
+    }
+}

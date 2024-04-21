@@ -15,7 +15,7 @@
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js"></script>
-    <script>WebFont.load({google: {families:['Public Sans', 'Source Sans 3','Roboto']}});</script>
+    <script>WebFont.load({google: {families:['Public Sans', 'Source Sans 3','Roboto','Roboto Condensed']}});</script>
     <style>
         :root {
             --grid-main-rows-total: 100;
@@ -34,13 +34,17 @@
     <link rel="stylesheet" href="css/style2.css">
     <link rel="stylesheet" href="css/pages.css">
     <link rel="stylesheet" href="css/datatables.min.css">
+    <link rel="stylesheet" href="css/locations.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <script src="js/fcns.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
     <script src="js/components.js"></script>
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
     <script src="js/datatables.min.js"></script>
+    <script src="js/locations2.js"></script>
+    
 </head>
 <body>
     <div class="MAIN-GRID"> 
@@ -55,10 +59,31 @@
                 </div>
                 <div class="page-ux-col2 body-text">
                     <h1>Online & Virtual Classes</h1>
+                    
+                    <p>Heights Driving School offers students two different ways to complete the 24 hours of class instruction remotely</p>
+                    <ol>
+                        <li><span class="inlist-header">Virtual classroom via Zoom:</span> 
+                            <ul>
+                                <li>Similar to a traditional classroom environment</li>
+                                <li>Class is administered by one of our trained instructors over video</li>
+                                <li>Students can participate and ask questions</li>
+                            </ul>
+                        </li>
+                        <li><span class="inlist-header">Solo online classes:</span>
+                            <ul>
+                                <li>Students can complete classes at their own pace</li>
+                                <li>24/7 access</li>
+                            </ul>
+                        </li>
+                    </ol>
 
-                    <div style="display:flex;justify-content: space-around;"><h2 style="align-text:center!important;"><img class="cards-img" src="images/Blinking_warning.gif" style="width: 2rem!important; height:2rem!important;" >
-                        Under Construction
-                    <img class="cards-img" src="images/Blinking_warning.gif" style="width: 2rem!important; height:2rem!important;" ></h2></div>
+                    <h2>Virtual Classroom (Zoom)</h2>
+                    <p></p>
+                    <hds-zoom></hds-zoom>
+
+                    <h2>Online Classes</h2>
+
+                    
 
 
                     
