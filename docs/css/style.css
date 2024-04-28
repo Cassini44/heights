@@ -184,12 +184,11 @@ table.dataTable>thead {
 /* Types of tables */
 
 .registration-table { padding: 2rem; margin-top: 5rem; }
-
 .loc-calender-mobile{ padding: 2rem; margin-top: 2rem; font-family: "Roboto Condensed";}
 .loc-calender-mobile .dataTable.no-footer {margin-bottom: 0!important; }
-.loc-calender-mobile table.dataTable>thead>tr>th {background-color: #2d8cff52!important;}
+.loc-calender-mobile table.dataTable>thead>tr>th {background-color: var(--accent-color-9)!important;}
 
-
+.highschool-programs-table thead>tr>th{background-color: var(--accent-color-9)!important;}
 
 /*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
 

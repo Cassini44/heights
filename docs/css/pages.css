@@ -28,7 +28,7 @@
 
 .body-text > h2{
     font-family: "Roboto";
-    color: var(--accent-color-2); 
+    color: var(--h2); 
     margin-top: 5rem!important;
     font-size: clamp(1.7rem, 7vw, 2rem);
     /* white-space: nowrap;  */

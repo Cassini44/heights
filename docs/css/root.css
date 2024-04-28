@@ -9,11 +9,11 @@
 
   --primary-color: #2f363d;
   /* --primary-color: #495867; */
-  
+  /* #efefef59 */
   --primary-color-shade-lighter: color-mix(in srgb,var(--primary-color),#ffffff 15%);
   --accent-color-1: #F1F1E6;
   
-  --accent-color-2 : #FF331F;
+  --accent-color-2 : var(--primary-color-shade-lighter);
   --accent-color-3 : color-mix(in srgb,var(--primary-color),#C78226 100%);
   --accent-color-4 : #e9e9e993;
   --accent-color-5 : #D00000;
@@ -21,6 +21,9 @@
   /* #ffe48b */
   --accent-color-7 : #A2FAA3;
   --accent-color-8 : #92C9B1;
+  --accent-color-9: #d5eef3;
+  /*   26a1b3*/
+  --h2 : #26a1b3;
   --carbon_fiber : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAQAAAC/mnxTAAAAIUlEQVR4AWPc7sywl4GBgUSScTsD6YBsbYPNkaOOHHUkALSqN8mc6mmTAAAAAElFTkSuQmCC");
 
   /* ------------------------------------------ */

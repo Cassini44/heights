@@ -17,20 +17,22 @@ j.runOnPageLoad( () => {
     loadTables.adult_abbreviated()
     loadTables.seniors()
     loadTables.disability()
+    loadTables.teens_highschool_nordonia()
+    loadTables.teens_highschool_padua()
 
-    console.table(j.q('*').reduce((acc,v)=>{
-        var rect = v.getBoundingClientRect()
-        var  width = rect.width
-        if(width && (v.id === 'c-mobile' || v.id === 'c-header')) {
+    // console.table(j.q('*').reduce((acc,v)=>{
+    //     var rect = v.getBoundingClientRect()
+    //     var  width = rect.width
+    //     if(width && (v.id === 'c-mobile' || v.id === 'c-header')) {
 
-            acc.push([
-                v.id,
-                width,
+    //         acc.push([
+    //             v.id,
+    //             width,
                 
-            ])
-        }
-        return acc
-    },[]).sort((a,b)=>{return a[1] - b[1]}))
+    //         ])
+    //     }
+    //     return acc
+    // },[]).sort((a,b)=>{return a[1] - b[1]}))
 })
 
 
@@ -54,6 +56,11 @@ const loadTables = {
                 return v
             })
         },
+        highschool_program(x) {
+            return x.map((v,i)=>{ 
+                return v.map(v2 => j.wrapInSpan(v2,'data-highschool-programs'))
+        })
+        }
 
 
 
@@ -123,6 +130,33 @@ const loadTables = {
             ['Seniors Driving Evaluation','Call for Pricing',loadTables.register_button],
         ],'enrollment')
     },
+
+    teens_highschool_padua() {
+        createDataTable('#padua_schedule',[
+            ['Fall','Winter','Spring'],
+            ['10/02/23','01/22/24','05/06/24'],
+            ['10/03/23','01/23/24','05/07/24'],
+            ['10/04/23','01/24/24','05/08/24'],
+            ['10/05/23','01/25/24','05/09/24'],
+            ['10/06/23','01/29/24','05/13/24'],
+            ['10/09/23','01/30/24','05/14/24'],
+            ['10/10/23','01/31/24','05/15/24'],
+            ['10/11/23','02/01/24','05/16/24'],
+        ],'highschool_program','',"33%")
+    },
+    teens_highschool_nordonia() {
+        createDataTable('#nordonia_schedule',[
+            ['Session 1','Session 2'],
+            ['03/04/24','03/18/24'],
+            ['03/05/24','03/20/24'],
+            ['03/06/24','03/21/24'],
+            ['03/07/24','03/22/24'],
+            ['03/11/24','03/25/24'],
+            ['03/12/24','03/26/24'],
+            ['03/13/24','03/27/24'],
+            ['03/14/24','03/28/24'],
+        ],'highschool_program','',"50%")
+    }
 
 
 }

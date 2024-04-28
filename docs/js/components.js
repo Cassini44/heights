@@ -788,7 +788,7 @@ const mobileCalendar = {
                     var date = new Date(startsAt)
                     var date2 = new Date(endsAt)
     
-                    var datestring = date.toLocaleDateString('en-US')
+                    var datestring = date.toLocaleDateString('en-US',{day:"2-digit",month:"2-digit",year:"2-digit"})
                     var starttime = date.toLocaleTimeString('en-US', { hour: 'numeric',minute: '2-digit', hour12: true })
                     var endtime = date2.toLocaleTimeString('en-US', { hour: 'numeric',minute: '2-digit', hour12: true })
                     console.log(entry)

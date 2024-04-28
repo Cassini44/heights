@@ -13,14 +13,14 @@
  * @param {string} formatfcn name of formatting function found in the loadtables object
  * @param {string} scrollheight argument given to scrollY, locks the height of the table body to a certain ammount and creates a scrollbar
  */
-function createDataTable(id,y,formatfcn,scrollheight) {
+function createDataTable(id,y,formatfcn,scrollheight,width="25px") {
 
     if(formatfcn) { y = loadTables.formatFunctions[formatfcn](y) }
    
 
     
     if(document.querySelector(id)){
-    var cols = y.shift().map(v => { return {title:v,"width":20}})
+    var cols = y.shift().map(v => { return {title:v,"width":width}})
     new DataTable(id, {
         scrollY : scrollheight??'',
         columns: cols,
