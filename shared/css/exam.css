@@ -1,0 +1,84 @@
+.exam.page-ux-col2.body-text{
+    box-shadow: -10px 9px 14px 1px #0000001c;
+    font-family: "Roboto";
+}
+
+.exam > * {
+    margin : 1.2rem;
+}
+
+.exam-header { 
+    display: grid; 
+    border-bottom: 1px solid var(--accent-color-4); 
+    margin-bottom: 8rem; 
+    color:rgb(206, 203, 203);
+}
+
+.exam-header-exam_name {
+    font-family: "Roboto";
+    font-weight: 900;
+    color: var(--primary-color);
+
+    font-size: 1.8rem;
+    line-height: 3rem;
+    margin-bottom: 0.4rem !important;
+    /* margin-top: 2.5rem!important; */
+    /* padding-bottom: 1.2rem; */
+}
+
+
+.exam-header-student  .fa-regular { 
+    color:rgb(119, 119, 119); 
+}
+
+.exam-header-student { display: grid; 
+    font-size: 1.6rem; 
+    padding-bottom: 1rem; 
+}
+
+.exam-header-student-name { 
+
+}
+
+.exam-header-student-time { 
+
+}
+
+
+
+.exam-test-section-question { 
+
+}
+
+.exam-test-section-question > span { 
+    font-weight: 700;
+    font-size: 3rem;
+    display: block;
+    margin-bottom: 2rem;
+} 
+
+.exam-test-section-question-text { 
+    font-family: 'Source Sans 3';
+    font-size: 2.6rem;
+}
+
+.exam-test-section-question-choices{ 
+
+}
+
+.question-type-truefalse {
+    margin-top: 5rem;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+}
+
+.question-type-truefalse .page-ux-btn {
+    background-color: #dddddd;
+    height: initial;
+    width: 20rem;
+    color:#535353;
+}
+
+
+

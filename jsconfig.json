@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+      "module": "ESNext",       // Support ES Modules (import/export)
+      "target": "ES6",          // Use modern JavaScript features
+      "baseUrl": "./",           // Resolve paths from the project root
+    },
+    "include": ["src/**/*", "ssl/**/*"],  // Include all your source files
+    "exclude": ["node_modules", "logs"]  // Exclude unnecessary directories
+}

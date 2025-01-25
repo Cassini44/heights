@@ -1,0 +1,65 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "logs\\.6aebbb86674660d243a4c545fa09898341454757-audit.json",
+    "files": [
+        {
+            "date": 1736576842099,
+            "name": "logs\\2025-01-11-server.log",
+            "hash": "1db9ab23145c7257838ba7f44c83c3ef3b0e0140224b7e6b5565f53261f7dfec"
+        },
+        {
+            "date": 1736662624587,
+            "name": "logs\\2025-01-12-server.log",
+            "hash": "280e6e1a4dad47dc568cd26bd204044eb3c91ac50cdf75ec561827a0e5f06211"
+        },
+        {
+            "date": 1736747631542,
+            "name": "logs\\2025-01-13-server.log",
+            "hash": "b9a781b61e4c6d82fe3b3b4b8b239b1d68ff977a78071128922e1a7b2d4fb8ff"
+        },
+        {
+            "date": 1736834642248,
+            "name": "logs\\2025-01-14-server.log",
+            "hash": "b936bb492c4fde3ef989826f4aeec6de62f019e443a8dd57ab90d8aedd30d3a8"
+        },
+        {
+            "date": 1736989286019,
+            "name": "logs\\2025-01-15-server.log",
+            "hash": "1c656a4431ffdbb7918fefab6abbf2951002e0aa87a76cb5eb9683bf5fc8d54c"
+        },
+        {
+            "date": 1737178127768,
+            "name": "logs\\2025-01-18-server.log",
+            "hash": "81a348f1ac772a3f22d0a25a430c884426b56b259c8e1149d8582bb79fd1ce1d"
+        },
+        {
+            "date": 1737266105006,
+            "name": "logs\\2025-01-19-server.log",
+            "hash": "efbce72a59952f06a155381243fca9b0febc92d78e0174d37275e29def965b15"
+        },
+        {
+            "date": 1737351078412,
+            "name": "logs\\2025-01-20-server.log",
+            "hash": "62b2c8f5043f0b149def3bdb06a95b653dfec95a1be413427d7977eebfdda6cb"
+        },
+        {
+            "date": 1737440363471,
+            "name": "logs\\2025-01-21-server.log",
+            "hash": "04a1e367b4d91d8654483af1914861e00b088e3fe2493ea0695ff80e0e20c91b"
+        },
+        {
+            "date": 1737695381292,
+            "name": "logs\\2025-01-24-server.log",
+            "hash": "237dbde54ec58f6277f175b914f07d7e92cd0be2e5a2a781c77420dcd2b582eb"
+        },
+        {
+            "date": 1737783001844,
+            "name": "logs\\2025-01-25-server.log",
+            "hash": "d17a2ba0c6fb02b7286e36d66b290b5a1caef54ce388f314506a90ca8cd04378"
+        }
+    ],
+    "hashType": "sha256"
+}

@@ -1,0 +1,283 @@
+body{
+  background-image: unset ;
+  background-color: var(--primary-color);
+  height: 100vh;
+  font-family: var(--font-primary);
+}
+
+/* -------------------------------------------------------------------------- */
+/* added 11/2/24*/
+
+
+
+
+#password-error-message {
+  margin-top: 5px;
+  margin-bottom:  20px;
+  text-align: center;
+  color: red;
+
+}
+
+#username {
+  margin-bottom: 15px;
+}
+
+#password {
+  margin-bottom: 0px;
+}
+
+
+/* -------------------------------------------------------------------------- */
+.MAIN-GRID {
+  height:100%;
+  display: grid;
+  grid-template-rows: 80% 20%;
+  grid-template-areas: "login" "footer";
+}
+
+
+#c-footer .footer-login {
+grid-area: f4;
+text-align: center;
+color: #dbd8d8;
+font-size: 1.2rem;
+}
+
+#login-main {
+grid-area: login;
+display: flex;
+justify-content: center;
+flex-direction: column;
+align-items: center;
+}
+
+/* --------------------- */
+
+
+#login-input .or-seperator-block {
+width:max(100%,12rem);
+height:10px;
+margin-left: 10%;
+margin-bottom: 4rem;
+margin-top: 2em;
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+}
+
+#login-input .or-seperator-block  .or-text{
+font-size: 16px;
+color: #cecdcd;
+}
+
+#login-input .or-seperator-block .or-line{
+position: relative;
+height:1px;
+width: 25%;
+background-color: #cecdcd;
+/* background-color: #353232; */
+
+}
+
+
+.login-block{
+width:80%
+}
+
+
+
+#login-container {
+  background-image: var(--carbon_fiber);
+  background-color: var(--white-tinted);
+  /* height:60rem; */
+  width:40rem;
+  border-radius: 5%;
+  display: grid;
+  /* grid-template-rows: 30% 50% 20%; */
+
+  /* grid-template-rows: 1fr 3fr 1fr; */
+
+
+}
+
+
+
+@media screen and (max-width: 480px) {
+  #login-container {
+    height: 100vh;
+    width: 100vw;
+    border-radius: unset;
+    grid-template-rows: 30% 50% 20%;
+
+  }
+
+  .MAIN-GRID {
+    /* margin: 0 3vw 0 3vw; */
+    display: unset;
+    height: 100%;
+
+  }
+
+  #login-main{
+    height: 100%;
+  }
+
+  #c-footer {
+    
+    display: none;
+  }
+
+
+}
+
+
+
+/* -------------------------------------------------------------------------- */
+/* FOCUS ON AN INPUT */
+input:focus {
+border: 1px solid #3498db !important;
+}
+
+label{
+padding: 0 0 0 10px;
+font-size: 14px !important;
+color: #22222285;
+}
+
+
+
+.heights-logo-login {
+width: min(100%,448px);
+}
+
+
+hds-footer{
+border-top: 1px inset rgba(41, 41, 41, 0.993);
+}
+
+
+
+
+/* =========================================================================== */
+
+
+
+
+
+/*  */
+input[type="submit"] {
+background-color: var(--warm-light);
+color:grey;
+/* border: 1px solid #e04720 ; */
+}
+
+/*SUBMIT IF USERNAME AND PASSWORD ENTERED*/
+input[type="submit"].login-ready{
+background-color: #3475a0;
+color:var(--grey1);
+/* border: 1px solid #babac0 ; */
+}
+
+/*SUBMIT IF HOVERED WHILE USER AND PASS IS ENTERED*/
+input[type="submit"].login-ready:hover {
+  background-color: var(--confirm-blue);
+}
+
+
+/*  */
+button:hover {
+box-shadow: 1px 1px 5px var(--warm-light);
+} 
+
+
+/*ALL BUTTONS ON LOGIN SCREEN*/
+button, input[type="submit"]{
+/* box-sizing: content-box; */
+cursor: pointer;
+width: 100%;
+border: 1px solid var(--warm-light);;
+font-weight: bold;
+
+}
+
+/*BUTTONS FOR CREAT ACCOUNT FORGOT USERNAME*/
+button {
+background-color: rgba(238, 241, 187, 0);
+width: 100%;
+}
+
+
+
+
+
+
+/* =========================================================================== */
+
+
+
+
+/* ONLY THE USERNAME AND PASSWORD FIELDS */
+
+
+
+input[type="text"],input[type="password"],input[type="email"] {
+border: 1px solid #bbb;
+padding: 0 0 0 10px;
+/* box-sizing: border-box; */
+width:100%;
+
+}
+
+
+
+
+/* =========================================================================== */
+
+
+
+
+/* BASIC STRUCTURE */
+
+.login-page {
+
+input[type="text"],input[type="password"],button,input[type="submit"],input[type="email"],label,#password-error-message {
+  margin-left: 10%;
+  height: 40px;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  outline: 0;
+  -moz-outline-style: none;
+  width: 100%;
+  font-size: 16px;
+  padding: 0 0 0 10px;
+}
+
+
+}
+
+
+
+
+
+
+
+/* -------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

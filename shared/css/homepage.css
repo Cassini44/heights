@@ -1,0 +1,159 @@
+
+
+
+
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+
+
+
+
+
+.google-map {
+    height: 75%;
+    width: 75%;
+ }
+
+
+
+
+
+ /* -------------------------------------------------------------------------- */
+
+ #c-banner {
+   grid-area: banner;
+   background-color: var(--halftone_yellow) !important;
+   grid-template-rows: 200px 2fr;
+   align-content: center;
+   /* box-shadow: 10px 11px 20px #acacac5c; */
+   /* outline: 2px solid black; */
+   display: grid;
+}
+
+
+
+
+
+
+.banner-title-container {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+.banner-title-text {
+   display: contents;
+   font-family: "Roboto Condensed";
+   /* text-wrap: nowrap; */
+   position: absolute;
+   z-index: 1;
+   line-height: 1.5;
+   font-weight: 700;
+   letter-spacing: 0.05em;
+   /* -webkit-text-stroke: azure; */
+   text-shadow: 10px 11px 20px #acacac5c;
+   font-size: 4.7rem;
+   color: #495867;
+}
+
+
+/* -------------------------------------------------------------------------- */
+ 
+
+
+ #logos-container {
+   /* width: 100vw; */
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: flex-end;
+}
+
+
+ .inline-logo {
+   align-self: center;
+   width: 26rem;
+}
+
+.inline-logo img{
+   width: 100%;
+}
+
+
+/* -------------------------------------------------------------------------- */
+
+#main-info {
+   /* grid-area: 1 / 1 / 100/ 100; */
+   /* box-sizing: border-box; */
+   column-gap: 50px;
+
+   padding: 1%;
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+
+}
+
+
+#main-info-col1 {
+   /* border: 1px solid red; */
+   /* width: 100%; */
+   box-sizing: border-box;
+   border-bottom: 9px solid #d0d1d386;
+   border-top: 9px solid #d0d1d386;
+}
+
+#main-info-col2 {
+   display: flex;
+   box-sizing: border-box;
+   justify-content: space-evenly;
+   align-items: center;
+   border-bottom: 9px solid #d0d1d386;
+   border-top: 9px solid #d0d1d386;
+}
+
+.body-text-homepage {
+   font-size: 12px;
+   display: flex;
+   align-content: flex-start;
+   flex-direction: column;
+}
+
+.body-text-homepage h1,.body-text-homepage p,.body-text-homepage ul { margin:1.2rem; }
+.body-text-homepage h1  {font-size: 3em;}
+.body-text-homepage p   { font-size: 2em;}
+.body-text-homepage ul  {line-height: 3em;font-size: 1.5em;}
+
+
+/* Small laptop? --------------------*/
+@media screen and (min-width: 846px) and (max-width: 1185px) { 
+   #main-info { grid-template-columns: 1fr; }
+   #main-info-col2 {display: none; }
+}
+
+
+/* In betweena phone and desktop --------------------*/
+@media screen and (min-width: 481px) and (max-width: 845px) { 
+   #main-info { grid-template-columns: 1fr; }
+   #main-info-col2 {display: none; }
+   #logos-container {width: 95vw;}
+    .banner-title-text {font-size: 10vw!important;}
+    #c-banner{
+      margin: 0px 5vw 0px 5vw;
+    }
+  
+}
+
+/* Phone --------------------*/
+@media screen and (max-width: 480px) { 
+   #main-info { grid-template-columns: 1fr; }
+   #main-info-col2 {display: none; }
+    #logos-container {width: 95vw;}
+    .banner-title-text {font-size: 10vw!important;}
+    #c-banner{
+      margin: 0px 5vw 0px 5vw;
+    }
+
+    
+}
