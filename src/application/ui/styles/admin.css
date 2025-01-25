@@ -1,0 +1,101 @@
+#form-layout-course-admin {
+
+        align-self: center;
+        height: 97%;
+        overflow: hidden;
+        display: grid;
+        width: 97%;
+        gap: 10px;
+        grid-template-rows: 1fr 1fr; /* Two rows, each taking equal space */
+        grid-template-columns: 1fr 1fr; /* First column 3x the width of the second */
+
+        grid-template-areas: 
+            "courses courses"
+            "del loc"
+        ;
+
+        #course_manager_courses{
+            overflow: scroll;
+            height: 100%;
+            grid-area: courses;
+        }
+        #course_manager_delivery_methods{
+            overflow: scroll;
+            height: 100%;
+            grid-area: del;
+        }
+        #course_manager_locations{
+            overflow: scroll;
+            height: 100%;
+            grid-area: loc;
+        }
+    
+}
+
+
+
+#form-layout-zones { 
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    width: 97%;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+    justify-items: center;
+
+    #map {
+        border: 1px solid black;
+        box-shadow: -4px -3px 5px 0px grey;
+        grid-row: 3/20;
+        grid-column: 10/21;
+        height: 100%;
+        width: 100%;
+    }
+
+
+        
+}
+
+
+
+#form-layout-home {
+
+
+}
+
+
+
+#form-layout-users {
+
+
+}
+
+
+
+#form-layout-prices {
+
+}
+
+
+#form-layout-vehicles {
+
+
+}
+
+#form-layout-employees {
+
+
+}
+
+
+#form-layout-stats {
+
+
+}
+
+#form-layout-system {
+
+
+}
+
+

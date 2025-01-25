@@ -1,0 +1,31 @@
+
+/* Enrollment */
+:is(td,th):has(span[data-price_column]) {
+    text-align: left!important;
+    width:20%!important; 
+}
+
+:is(td,th):has(span[data-enroll-button]) {
+    text-align: center!important;
+    width:30%!important;
+}
+
+:is(td,th):has(span[data-course-name]) {
+    width:50%!important;
+}
+
+
+/* High school programs */
+:is(td,th):has(span[data-highschool-programs]) {
+    /* width:50%!important; */
+    text-align: center!important;
+}
+:is(th):has(span[data-highschool-programs]) {
+    /* width:50%!important; */
+    color: var(--h2)!important;
+}
+
+
+
+
+

@@ -1,0 +1,99 @@
+
+:root {
+
+
+
+
+
+  /* ------------------------------------------ */
+
+  --primary-color: #2f363d;
+  /* --primary-color: #495867; */
+  /* #efefef59 */
+  --primary-color-shade-lighter: color-mix(in srgb,var(--primary-color),#ffffff 15%);
+  --confirm-blue: #3d88b9;
+  --accent-color-1: #F1F1E6;
+  --header-menu-item-color : rgb(252,252,252);
+  --accent-color-2 : #FF331F;
+  --accent-color-3 : color-mix(in srgb,var(--primary-color),#C78226 100%);
+  --accent-color-4 : #e9e9e993;
+  --accent-color-5 : #D00000;
+  --accent-color-6: #ffc810; 
+  /* #ffe48b */
+  --accent-color-7 : #A2FAA3;
+  --accent-color-8 : var(--primary-color-shade-lighter);
+  --accent-color-9: #efefef59; /*mobile table header*/
+  --h2 : var(--primary-color-shade-lighter);
+
+  --carbon_fiber : url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAPCAQAAAC/mnxTAAAAIUlEQVR4AWPc7sywl4GBgUSScTsD6YBsbYPNkaOOHHUkALSqN8mc6mmTAAAAAElFTkSuQmCC");
+
+  /* ------------------------------------------ */
+
+  --h1-color : var(--text-black); /*page*/
+  --accent-border-grey : #cccccc; /*style*/
+  --grey : #878788; /*stylegrid login*/
+  --grey1    : #F0F0F0; /*login*/
+  --grey2    : #FCFCFC; /*stylegrid*/
+  --warm-light    : #dfdfdf; /*locations stylegrid login*/
+  --white-tinted:#fefff7; /*login*/
+
+  /* -------------------------------------------------------------------------- */
+
+  --font-public-sans : 'Public Sans'; /**/
+  --font-primary : 'Source Sans 3'; /**/
+  --font-roboto-condensed : 'Roboto Condensed'; /**/
+
+  /* -------------------------------------------------------------------------- */
+
+  --icon_font-material_icons : 'Material Symbols Outlined'; /**/
+  --icon_font-fontawesome : 'FontAwesome'; /**/
+  --icon_font-material_icons_basic : 'Material Icons'; /**/
+  --icon-file : '\f0f6';
+  --icon-file-pdf : '\f1c1';
+  --icon-file-text-solid : '\f15c';
+  --icon-file-multi : '\f0c5';
+  --icon-phone : '\f095';
+  --icon-phone-square: : '\f87b';
+  --icon-check: : '\f00c';
+  --icon-check-circle: : '\f05d';
+  --icon-arrow-dropdown : '\f0d7';
+  --icon-arrow-dropdown-bold : '\f078';
+  --icon-arrow-right : '\f0da';
+  --icon-arrow-right-bold : '\f054';
+  --icon-map_marker : '\f041';
+  --icon-time : '\f017';
+  --icon-wheelchair : '\f193';
+  --icon-support : '\f1cd';
+  --icon-printer : '\f02f';
+  --icon-question : '\f29c';
+  --icon-sign_in : '\f090';
+  --icon-road : '\f018';
+  --icon-calender : '\f133';
+}
+
+
+*{ box-sizing: border-box; }
+html{ font-size: 62.5%; font-family: var(--font-primary)!important; }
+a { text-decoration: none; color: unset; }
+body { background-image: var(--carbon_fiber); margin:0; }
+
+
+/* Ensure all icons have a space after them */
+.material-icons:after{ content:'\00a0'; }
+.material-icons:before{ content:'\00a0'; }
+.invisible {visibility: hidden;}
+
+/* --primary-color: #252F3E;
+--primary-color: #324b5b;
+--accent-color-2 : #e9530d;
+--primary-color-shade-lighter: #252F3E; */
+
+/* --primary-color: #094c79; */
+/* --primary-color: #3b7092; */
+/* --primary-color: #2e659c; */
+/* --primary-color: #2b414f; */
+
+
+
+/* example 4102024 
+ example 4102024 */

@@ -1,0 +1,217 @@
+
+.location-selector-container{
+    width: 100%;
+    display: grid;
+}
+
+
+.location-option > span {
+    pointer-events: none;
+}
+
+
+
+
+.location-option.active-location {
+    color: var(--accent-color-2);
+    border-bottom: 4px solid var(--accent-color-2);
+   
+}
+
+
+/*---------------------------------------------------- */
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+#hds-locations-outermost-container{
+  margin-top: 20px;
+
+    display: grid;
+    width: 100%;
+}
+
+.loc-container.active-loc {
+    display: grid!important;
+}
+.loc-container{
+  display:none;
+}
+
+
+/*  */
+
+.loc-calender-mobile{
+  grid-area: mob;
+}
+
+.loc-address {
+    grid-area: addr;
+    font-size: min(4vw,40px);
+    font-weight: 600;
+}
+
+.loc-calender {
+    width: 100%;
+    grid-area: cal;
+}
+
+.loc-map {
+ grid-area: map;
+}
+
+
+
+
+
+
+/* -------------------------------------------------------------------------- */
+@media screen and (min-width: 846px) {
+  .location-option {
+    font-size: clamp(16px, 7vw, 20px);
+    /* font-size: 2.5vw; */
+    white-space: nowrap; 
+    font-weight:600;
+    padding: 1.5rem;
+}
+
+  .loc-container {
+    display:none;
+    grid-template-areas: "addr addr" "cal map";
+    
+    grid-template-rows: 5rem 45vh;
+    grid-template-columns: 1fr 0.75fr;
+    grid-gap: 2rem;
+}
+
+  .loc-calender-mobile {
+    display: none;
+  }
+
+  .location-selector {
+    cursor: pointer;
+      padding: 1.5rem;
+      column-gap: 2rem;
+      display: grid;
+      /* grid-auto-columns: 1fr; */
+      grid-auto-flow: column;
+      justify-content: center;
+      align-content: center;
+      border-bottom: 1px solid var(--warm-light);
+      width: 80%;
+      justify-self: center;
+  }
+
+}
+/* -------------------------------------------------------------------------- */
+
+
+
+
+/* -------------------------------------------------------------------------- */
+@media screen and (max-width: 845px) {
+  .location-option {
+      /* font-size: clamp(16px, 7vw, 20px); */
+      font-size: 3.4vw;
+      font-family:"Roboto Condensed";
+      white-space: nowrap;
+      font-weight: 600;
+      /* padding: 1.5rem; */
+    }
+    .location-selector {
+      cursor: pointer;
+        padding: 1.5rem;
+        column-gap: 2rem;
+        display: grid;
+        /* grid-auto-columns: 1fr; */
+        grid-auto-flow: column;
+        justify-content: center;
+        align-content: center;
+        border-bottom: 1px solid var(--warm-light);
+        width: 95%;
+        justify-self: center;
+    }
+    .loc-container.active-loc {
+      width: 100%; 
+  }
+
+
+
+  .location-selector{cursor: none;}
+
+  .loc-container {
+    justify-items: center;
+    width:90%;
+    grid-template-areas: "addr" "map" "mob";
+
+    grid-template-rows: 5rem 30vh auto ;
+    grid-gap: 2rem;
+  }
+
+  .loc-calender {
+    display: none;
+  }
+
+}
+/* -------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+/*  */
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓*/
+/* ------------------------------- */
+#location-load-spinner {
+    display: grid;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+#location-load-spinner {
+    display: grid;
+    
+}
+
+
+
+.lds-facebook {
+   align-self: center;
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-facebook div {
+    display: inline-block;
+    position: absolute;
+    left: 8px;
+    width: 16px;
+    background: var(--primary-color-shade-lighter);
+
+    animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+  }
+  .lds-facebook div:nth-child(1) {
+    left: 8px;
+    animation-delay: -0.24s;
+  }
+  .lds-facebook div:nth-child(2) {
+    left: 32px;
+    animation-delay: -0.12s;
+  }
+  .lds-facebook div:nth-child(3) {
+    left: 56px;
+    animation-delay: 0;
+  }
+  @keyframes lds-facebook {
+    0% {
+      top: 8px;
+      height: 64px;
+    }
+    50%, 100% {
+      top: 24px;
+      height: 32px;
+    }
+}
+  

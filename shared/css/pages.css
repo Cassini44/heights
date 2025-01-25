@@ -1,0 +1,310 @@
+/*  Used on most pages other than homepage */
+.page-ux .page-ux-col2 { border: 1px solid var(--accent-color-4); min-height: 80vh;}
+.body-text{background-color: white;}
+
+
+/* .page-ux{height:100%;} */
+
+
+
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+.body-text h1,.body-text p,.body-text ul,.body-text h2,.body-text ol,.body-text h3 { margin:1.2rem; }
+
+.body-text {font-family: "Source Sans 3"; font-weight: 200;}
+
+
+
+
+.body-text > h1 {
+    font-family: "Roboto";
+    color: var(--primary-color); 
+    border-bottom: 1px solid var(--accent-color-4);
+    font-size: clamp(2.5rem, 7vw, 4rem);
+    line-height: 3rem; 
+    margin-bottom:5rem !important;
+    margin-top: 5rem!important;
+    padding-bottom: 3rem;
+}
+
+
+
+
+.body-text > h2{
+    font-family: "Roboto";
+    color: var(--h2); 
+    margin-top: 5rem!important;
+    font-size: clamp(1.7rem, 7vw, 2rem);
+    /* white-space: nowrap;  */
+}
+.body-text > h3{
+    font-family: "Roboto";
+    color: var(--accent-color-8); 
+    font-size: clamp(1.7rem, 7vw, 2rem);
+    /* white-space: nowrap;  */
+}
+
+
+
+.body-text p { 
+    font-size: 2rem; 
+    line-height: 3rem; 
+}
+
+
+
+.body-text p.indent {
+    font-style: italic;
+    font-size: 1.6rem;
+    /* line-height: 1.9rem; */
+    border-left: 1px solid rgba(128, 128, 128, 0.288);
+    padding-left: 1rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
+}
+
+.body-text p.indent-alert {
+    font-style: italic;
+    background-color: #f8fff0;
+    font-size: 1.6rem;
+    /* line-height: 1.9rem; */
+    border-left: 1px solid rgba(128, 128, 128, 0.288);
+    padding-left: 1rem;
+    margin-right: 6rem;
+    margin-left: 6rem;
+}
+
+
+
+
+
+
+
+.body-text > :where(ul,ol) {
+    display: grid;
+    gap: 1rem;
+    list-style: outside;
+    margin-bottom: 3rem!important;
+}
+
+
+.body-text ul li::marker {
+    display: flex;
+    content: "\f0da";
+    font-size: 1.6rem;
+    font-family: var(--icon_font-fontawesome);
+    color:var(--primary-color-shade-lighter);
+}
+.body-text ul li ul li::marker {
+    content: "-";
+    font-size: 1.3rem;
+    font-family: var(--icon_font-fontawesome);
+    color:var(--primary-color-shade-lighter);
+}
+
+.body-text li {
+    line-height: 3rem;
+    padding-left: 2rem;
+    font-size: 1.6rem;
+    /* color:grey; */
+}
+
+
+
+
+
+.body-text ol {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+  
+.body-text > ol > li {
+    counter-increment: step-counter;
+    
+}
+.body-text > ol > li::before {
+    margin-right: 2rem;
+    content: counter(step-counter);
+    background-color: var(--primary-color-shade-lighter);
+    color: white;
+    font-weight: bold;
+    padding: 0.2rem 0.9rem;
+}
+
+
+.inlist-header {
+    font-size: 1.8rem;
+    font-weight: 900;
+}
+
+
+
+
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+/*#〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 *//*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+.page-ux-img-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.page-ux-img{   
+    height: 30vh;
+}
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+.page-ux-btn-container {
+    padding: 2rem;
+    column-gap: 2rem;
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr 0.5fr;
+    justify-content: center;
+    align-content: center;
+}
+
+.page-ux-btn {
+    cursor: pointer;
+    font-size: 2.5rem;
+    font-family: "source sans 3";
+    font-weight: 900;
+    height: 8rem;
+    background-color: var(--accent-color-1);
+    border: color-mix(in srgb, var(--accent-color-1), #797979ee 15%) solid 2px;
+    /* box-shadow: inset 1px 1px 20px 0px #dbdbdb; */
+}
+
+
+
+
+/*~〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+
+
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+.dps-logo{ height: 5rem; }
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+
+
+
+/*〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓〓 */
+
+
+
+@media screen and (min-width: 1185px) { 
+    .page-ux {
+        margin: 3vh 3vw 3vw 3vw;
+        display: grid;
+        grid-template-columns: 0.7fr 2.3fr 0.5fr;
+        gap: 1rem;
+    }
+    
+    
+    .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; }
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
+    .page-ux .sidebar-navigation h2 { text-align: center; font-style: italic; color: rgb(117, 117, 117); }
+    
+    
+    .page-ux .sidebar-navigation ul{
+        margin-top:5rem;
+        margin-left: 0rem;
+        font-family: 'Source sans 3';
+        line-height: 5rem;
+        font-size: 2rem;
+        list-style-type: none;   
+
+    }
+    .page-ux .sidebar-navigation ul li div { display: flex; align-items: center; }
+    .page-ux .sidebar-navigation ul li{ cursor: pointer; box-sizing: border-box; padding-left:0.5rem; border-left:0.5rem solid rgba(49, 49, 187, 0); }
+    .page-ux .sidebar-navigation ul li:hover { background-color: var(--accent-color-4); }
+    .page-ux .sidebar-navigation ul li.active-navigation-item{ border-left:0.5rem solid var(--accent-color-2); font-weight: 700;color: var(--accent-color-2)}
+    .page-ux .sidebar-navigation ul li.sub-navigation-item{ font-size: 1.8rem; }
+    .page-ux .sidebar-navigation ul a{ width:100%; display: block; }
+    .page-ux .sidebar-navigation ul .material-icons { font-size:1.5rem; }
+    .page-ux-col2 {padding: 5rem; }
+    
+}
+ 
+/* Small laptop? --------------------*/
+@media screen and (min-width: 846px) and (max-width: 1185px) { 
+    .page-ux .page-ux-col1 {display: none;}
+    .page-ux-col2 {padding: 5rem; }
+
+
+
+    
+}
+ 
+ 
+/* In betweena phone and desktop --------------------*/
+@media screen and (min-width: 481px) and (max-width: 845px) { 
+    .page-ux .page-ux-col1 {display: none;}
+    .page-ux .page-ux-col3 .sidebar-section{ margin-left: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); }
+    /* .page-ux-col2 {padding: 0.5rem; } */
+
+    table.dataTable.no-footer{width: 100%;}
+    /* .register_button_table {padding: 20%  !important;} */
+
+}
+
+/* Phone --------------------*/
+ @media screen and (max-width: 480px) { 
+
+    .page-ux .page-ux-col1 {display: none;}
+    .page-ux .page-ux-col3 .sidebar-section,.page-ux .page-ux-col3 h1{ margin-left: 1rem; margin-top: 2rem; margin-bottom: 1rem; }
+    /* .page-ux .page-ux-col3{margin-bottom: 30px;} */
+    .page-ux-col2 {padding: 0.5rem; }
+    .page-ux .page-ux-col3 .sidebar-section h2{ color:grey; background-color: rgba(107, 107, 107, 0.062); margin-bottom: 1rem;}
+    
+
+    .page-ux-btn-container {
+        padding: 2rem;
+        column-gap: 2rem;
+        row-gap: 2rem;
+        display: grid;
+        grid-template-columns: none;
+        align-content: center;
+        justify-content: center;
+    }
+    
+
+
+    
+     
+
+}
+
+/* Very small, possibly the samsung fold */
+@media screen and (max-width: 320px) { 
+   /*EMPTY*/
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

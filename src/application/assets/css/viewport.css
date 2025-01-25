@@ -1,0 +1,33 @@
+.form-container {
+    display:none !important;
+    justify-items: center;
+
+    height:100%;
+    width: 100%; 
+}
+
+
+.form-active {
+    display: grid !important;
+}
+
+
+
+
+/*# Layout # 1 */
+.form-layout-1 { 
+    height: 100%;
+    overflow: hidden;
+    display: grid;
+    width: 97%;
+    grid-template-columns: repeat(20,1fr);
+    grid-template-rows: repeat(20,1fr);
+}
+
+
+
+
+
+
+
+

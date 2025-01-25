@@ -1,0 +1,29 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "hds (with Nodemon)",
+        "runtimeExecutable": "nodemon", // Use nodemon for hot-reloading
+        "program": "${workspaceFolder}/src/app.js", // Your entry file
+        "restart": true, // Automatically restart on changes
+        "skipFiles": ["<node_internals>/**"], // Ignore internal Node.js files
+        "console": "integratedTerminal", // Use VS Code terminal for logs
+        // "internalConsoleOptions":"openOnFirstSessionStart", // Prevent debugger console popping up
+        "runtimeArgs": ["--inspect"], // Enable debugging mode
+        "env": {
+          "NODE_ENV": "development" // Set the environment to development
+        },
+        "trace": false
+      },
+      {
+        "type": "node",
+        "request": "launch",
+        "name": "Run npm start",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["start"],
+        "skipFiles": ["<node_internals>/**"]
+      }
+    ]
+  }
