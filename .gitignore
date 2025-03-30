@@ -6,5 +6,5 @@ node_modules/
 
 # Ignore SSL directory
 .pem
-src/ssl/
+ssl/
 /.env
