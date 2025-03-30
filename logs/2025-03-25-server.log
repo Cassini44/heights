@@ -1,0 +1,44 @@
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:40:35.872Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:40:50.721Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:40:55.154Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:58:31.578Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:59:16.442Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T06:59:51.602Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:00:36.208Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:00:40.489Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:00:42.970Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:00:44.047Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:00:52.534Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:33.147Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:34.420Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:35.805Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:42.373Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:44.085Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:01:47.809Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:29.942Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:36.353Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:41.232Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:42.288Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:46.738Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:53.141Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:02:59.619Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:18.531Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:20.406Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:50.106Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:52.254Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:54.145Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:03:57.155Z"}
+{"level":"error","message":"Unhandled Rejection: Cannot read properties of undefined (reading 'head')","stack":"TypeError: Cannot read properties of undefined (reading 'head')\n    at default (file:///C:/Users/nyden/Home/Dev/JS/Heights%20Driving%20School%20Inc/Heights/src/controllers/render.js:24:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-03-25T07:04:24.818Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:04:51.923Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:05:27.028Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:05:29.089Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:06:06.089Z"}
+{"level":"error","message":"Unhandled Rejection: Cannot read properties of undefined (reading 'head')","stack":"TypeError: Cannot read properties of undefined (reading 'head')\n    at default (file:///C:/Users/nyden/Home/Dev/JS/Heights%20Driving%20School%20Inc/Heights/src/controllers/render.js:24:37)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-03-25T07:06:16.229Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:06:20.325Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:07:48.486Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:07:57.113Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:11:48.357Z"}
+{"level":"error","message":"Unhandled Rejection: SCRIPTS is not defined","stack":"ReferenceError: SCRIPTS is not defined\n    at default (file:///C:/Users/nyden/Home/Dev/JS/Heights%20Driving%20School%20Inc/Heights/src/controllers/render.js:35:9)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)","timestamp":"2025-03-25T07:11:51.351Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:12:08.984Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:12:10.180Z"}
+{"level":"info","message":"Server started on port 8080","timestamp":"2025-03-25T07:12:35.900Z"}

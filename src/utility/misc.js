@@ -1,7 +1,7 @@
 import params from '../application/ui/parameters.js'
 import ejs from 'ejs'
-
-
+import path from 'path'
+import fs from 'fs'
 
 export const n = {
     /**
@@ -48,11 +48,27 @@ export const ejsFcns = {
     const formspath = params.filepaths.forms
     // Render the file with data and capture the output in a variable
   //   console.log(`${formspath}${formName}`)
-    const renderedHtml = await ejs.renderFile(n.filePath(`${formspath}${formName}.ejs`), data);
-    ejs.render()
+    const renderedHtml = await ejs.renderFile(n.filePath(`${formspath}${formName}`), data);
+    
   
     return renderedHtml
   },
+
+  /**
+   * 
+   * @param {string} user_type_and_form params.filepaths.forms + whatever you put here. For example, admin/vehicles.ejs would be valid
+   * @param {object} [data] key value pairs to load into ejs template 
+   * @returns html
+   */
+  renderFormSync(user_type_and_form,data) {
+
+    var filepath = n.filePath(`${params.filepaths.forms}${user_type_and_form}`)
+    const templateStr = fs.readFileSync(filepath, 'utf-8'); // Read the file synchronously
+
+    return ejs.render(templateStr, data);
+  }
+
+
 
 
 

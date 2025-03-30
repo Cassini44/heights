@@ -5,6 +5,8 @@
   import fs from 'fs';
   import path from 'path';
   import { performance } from 'node:perf_hooks';
+  import { f } from '../../utility/f.js';
+
 //=Configure dotenv
   dotenv.config();
 
@@ -102,7 +104,7 @@ const db = {
      * var {result1,result2} = multi_query(`
      * SELECT COL FROM TABLE WHERE COL2 = ? AND COL3 = ?;
      * SELECT COL FROM TABLE2 WHERE COL2 = ? AND COL3 = ?;
-     * `,['result1',['result2']],[a,b,c,d] 
+     * `,['result1','result2'],[a,b,c,d] 
      * )*/
   async multi_query(sql, return_keys, params) {
     const [rows, fields] = await pool.query(sql, params);
@@ -119,48 +121,117 @@ const db = {
     }, {});
   },
 
-  /**
-   *
-   * @param {*} tablename name of table
-   * @param {*} array 2d array, headers must corespond to db columns
-   * @param {*} transaction
-   * @returns
-   */
-  async upsertRows(tableName, array, transaction) {
-    const context = transaction || pool;
 
-    var columns = array.shift();
-    // Create the placeholder string for the values
-    const placeholders = array
-      .map((v) => `( ${v.map((v2) => "?").join(",")} )`)
-      .join(",");
-    const intoCols = columns.join(", ");
-    const ondupekey = columns.map((v) => `${v} = VALUES(${v})`).join(",");
-
-    // Create the SQL query dynamically
-    const sql = `
-      INSERT INTO ${tableName} 
-      (${intoCols})
-      VALUES ${placeholders}
-      ON DUPLICATE KEY UPDATE
-      ${ondupekey}
-    `;
-
-    var test = array[0].length;
-    var testcase = array.every((v) => v.length === test);
-
-    var values = array.flat();
-
-    if (!testcase) {
-      throw new Error("upsertRows tried to insert a jagged array");
+  async upsertRows(tableName, array, keyColumn, transaction) {
+    if (!array.length || array.length < 2) {
+        return;
     }
 
-    const result = await context.execute(sql, values);
+    const context = transaction || pool;
 
-    console.log(result);
+    // Extract headers (first row)
+    const columns = array[0];
 
-    return "Success"; // Return the insert ID of the new row
+    // Extract values (remaining rows) and replace undefined with NULL
+    const dataRows = array.slice(1).map(row =>
+        row.map(value => (value === undefined ? null : value))
+    );
+    if (!dataRows.length) {
+        console.log("❌ No valid data rows found.");
+        return;
+    }
+    console.log("📊 Data Rows:", dataRows);
+
+    // Ensure keyColumn exists
+    if (!columns.includes(keyColumn)) {
+        console.error(`❌ Key column '${keyColumn}' does not exist in headers.`);
+        throw new Error(`Key column '${keyColumn}' must exist in data headers.`);
+    }
+    
+    console.log(`✅ Key column '${keyColumn}' found.`);
+
+    // **Step 1: Generate UNION ALL for batch processing (Keep working UPDATE statement)**
+    const selectStatements = dataRows
+        .map(() => `SELECT ${columns.map(() => '?').join(', ')}`)
+        .join(' UNION ALL ');
+
+    const values = dataRows.flat();
+
+    // **Step 2: Keep Your Working UPDATE Query**
+    const updateSql = `
+        UPDATE ${tableName} AS t
+        INNER JOIN (
+            ${selectStatements}
+        ) AS new_data (${columns.join(', ')})
+        ON t.${keyColumn} = new_data.${keyColumn}
+        SET ${columns
+            .filter(col => col !== keyColumn)
+            .map(col => `t.${col} = new_data.${col}`)
+            .join(', ')};
+    `;
+
+    // **Step 3: Correct INSERT using VALUES**
+    const valuePlaceholders = dataRows.map(() => `(${columns.map(() => '?').join(', ')})`).join(', ');
+    
+    const insertSql = `
+        INSERT IGNORE INTO ${tableName} (${columns.join(', ')})
+        VALUES ${valuePlaceholders}
+        ;
+    `;
+
+    try {
+
+
+       
+        // const result = await context.query( `${updateSql}${insertSql}`, [...values]); // Run insert separately
+
+        
+        
+
+        const [result_update] = await context.execute(updateSql, [...values]); // Run update first
+        const [result_insert] = await context.execute(insertSql, [...values]); // Run insert separately
+
+        //result.affectedRow
+
+        
+
+        console.log( {action: 'BATCH_UPSERT ✔️', info : `
+          Updated:${result_update.info}\n
+          Inserted:${result_insert.info}
+
+        `})
+
+    } catch (error) {
+        console.error("❌ Batch Upsert Error:", error);
+        console.error("🛠 SQL Query:\n", updateSql, "\n", insertSql);
+        console.error("🔢 SQL Parameter Values:", [...values, ...values]);
+        throw error;
+    }
   },
+
+  /**
+   * 
+   * @param {string} tableName name of table
+   * @param {string} keyColumn the field by which you are deleting on. the values you add in the keys paramater match this field in order to delete
+   * @param {[]} keys 1d array of values as they appear in the column defined in keyColumn
+   * @param {object} [transaction] include the transaction object, if applicable
+   */
+  async deleteRows(tableName,keyColumn,keys,transaction) {
+    const context = transaction || pool;
+
+    var query = `DELETE FROM ${tableName} WHERE ${keyColumn} IN (${keys.map(() => '?').join(', ')})`
+
+    context.execute(query,keys)
+
+
+
+  },
+
+
+
+
+
+
 
   /**
    * Dynamically inserts a row into a table based on the provided data.
@@ -190,6 +261,8 @@ const db = {
 
     return result.insertId; // Return the insert ID of the new row
   },
+
+
 
   async transaction(fcn, onFailure) {
     const connection = await pool.getConnection();

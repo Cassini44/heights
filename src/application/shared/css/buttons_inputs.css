@@ -1,0 +1,40 @@
+
+
+sl-button {
+    display: block!important;
+}
+
+
+
+
+
+.listArrow {
+
+    
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    border: solid #333333;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 2px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+  }
+
+
+
+  /*
+#SPECIFIC COLUMN STYLE
+Self contained
+*/
+.plus-add {
+    font-weight: bold;
+     background-color: #aecdc3;
+     border: 1px solid white;
+     border-radius: 20px;
+
+     &:hover  {
+        background-color: #d5ede5;
+     }
+ }

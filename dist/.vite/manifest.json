@@ -1,0 +1,42 @@
+{
+  "_TableEngine-DRdhVy-Y.js": {
+    "file": "assets/TableEngine-DRdhVy-Y.js",
+    "name": "TableEngine"
+  },
+  "_admin.js": {
+    "file": "assets/admin-Bb9gnxVm.js",
+    "name": "admin",
+    "src": "_admin.js",
+    "isEntry": true,
+    "imports": [
+      "_TableEngine-DRdhVy-Y.js"
+    ],
+    "css": [
+      "assets/admin-BuquU1hY.css"
+    ]
+  },
+  "_instructor.js": {
+    "file": "assets/instructor-l0sNRNKZ.js",
+    "name": "instructor",
+    "src": "_instructor.js",
+    "isEntry": true
+  },
+  "_student.js": {
+    "file": "assets/student-l0sNRNKZ.js",
+    "name": "student",
+    "src": "_student.js",
+    "isEntry": true
+  },
+  "main.js": {
+    "file": "assets/main-BMUWnqXb.js",
+    "name": "main",
+    "src": "main.js",
+    "isEntry": true,
+    "imports": [
+      "_TableEngine-DRdhVy-Y.js"
+    ],
+    "css": [
+      "assets/main-CHrCs3m6.css"
+    ]
+  }
+}

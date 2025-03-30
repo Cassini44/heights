@@ -1,7 +1,7 @@
 import jwt from 'jsonwebtoken';
 import dotenv from 'dotenv';
 import bcrypt from 'bcrypt';
-import public_sql from '../models/db_model/public.js';
+import {public_sql} from '../controllers/dataAccessPublic.js';
 import logger from '../utility/logger.js';
 
 // Configure dotenv after imports
@@ -32,8 +32,7 @@ const auth = {
     // Middleware to authenticate the JWT token
     authenticateToken(req, res, next) {
         console.log('Checking token...');
-        global.debugVar += 1;
-        console.log(global.debugVar);
+        
 
         res.set('Cache-Control', 'no-store, no-cache, must-revalidate, private');
         res.set('Pragma', 'no-cache');

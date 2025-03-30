@@ -1,6 +1,10 @@
 
-##For date / time
 
-import dayjs from 'dayjs';
-import utc from 'dayjs/plugin/utc';
-import timezone from 'dayjs/plugin/timezone';
+Checklist before go live
+
+# Make sure to remove the absolute paths from anything (c:/Users/Nyden ...)
+
+
+
+
+

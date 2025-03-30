@@ -1,0 +1,26 @@
+{
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/Thumbs.db": true,
+        "**/.json": true,
+        "**/.vscode": true,
+        "node_modules": true,
+        "desktop.ini": true,
+        "package-lock.json": true,
+        "package.json": true,
+        ".clasp.json": true,
+        "**/appsscript.json": true,
+        "archive": true
+    },
+    "hide-files.files": [],
+    "workbench.colorCustomizations": {
+        "editorInlayHint.background": "#5a5959b7",
+        "editorInlayHint.foreground": "#5d6a7d",
+        "editor.lineHighlightBackground": "#1073cf2d",
+        "editor.lineHighlightBorder": "#9fced11f"
+    }
+}

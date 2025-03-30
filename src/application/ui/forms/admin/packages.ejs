@@ -1,0 +1,89 @@
+
+<style>
+
+#packages {
+    /* background-color: bisque; */
+}
+
+.form-layout-packages { 
+
+    padding:5px;
+    height: 97%;
+    overflow: hidden;
+    width: 97%;
+
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-rows: repeat(5, 1fr);  */
+    gap: 8px;
+
+    grid-auto-rows: minmax(0, 1fr); /* Ensures 4 equal-height rows */
+
+    grid-template-areas: 
+        'all-packages package-info package-info'
+        'all-packages package-contents package-contents'
+        'all-courses all-courses all-courses'
+        'all-courses all-courses all-courses'
+    ;
+    
+
+    #package-manager-all-courses {
+        grid-area: all-courses;
+        /* background-color: aliceblue; */
+    }
+    #package-manager-selected-package-contents {
+        grid-area: package-contents;
+        /* background-color: aqua; */
+    }
+    #package-manager-selected-package-info {
+        grid-area: package-info;
+        background-color: bisque;
+    }
+    #package-manager-all-packages {
+        grid-area: all-packages;
+        /* background-color: burlywood; */
+    }
+    
+    
+
+}
+
+
+</style>
+
+
+
+<div class="form-layout-packages">
+
+
+
+    <!-- ----------------------------------------------------------------------- -->
+
+    <div id="package-manager-all-packages">  
+        <%- packagesAll %>  
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    
+    <div id="package-manager-selected-package-contents">  
+        <%- packageCourses %> 
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+    
+    <div id="package-manager-selected-package-info">
+
+    </div>
+    
+    <!-- ----------------------------------------------------------------------- -->
+
+    <div id="package-manager-all-courses">
+        <%- allCourses %>
+    </div>
+
+    <!-- ----------------------------------------------------------------------- -->
+
+
+
+</div>

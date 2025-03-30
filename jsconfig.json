@@ -2,7 +2,14 @@
     "compilerOptions": {
       "module": "ESNext",       // Support ES Modules (import/export)
       "target": "ES6",          // Use modern JavaScript features
-      "baseUrl": "./",           // Resolve paths from the project root
+      "baseUrl": "./",           // Resolve paths from the project root,
+      "paths": {
+        "@admin/*": ["src/application/ui/code/admin/*"],
+        "@student/*": ["src/application/ui/code/student/*"],
+        "@instructor/*": ["src/application/ui/code/instructor/*"],
+        "@shared_js/*": ["shared/js/*"],
+        "@shared_css/*": ["shared/css/*"]
+    }
     },
     "include": ["src/**/*", "ssl/**/*"],  // Include all your source files
     "exclude": ["node_modules", "logs"]  // Exclude unnecessary directories

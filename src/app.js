@@ -14,11 +14,23 @@ import logger from './utility/logger.js';
 import chalk from 'chalk';
 import path from 'path'
 import cookieParser from 'cookie-parser';
+import dotenv from 'dotenv';
+import {f} from './utility/f.js'
+import fs from 'fs';
+import { getManifest } from './utility/viteUtility.js';
 
 
-global.debugVar = 0;
-console.log(global.debugVar);
+/* -------------------------------------------------------------------------- */
 
+
+/* -------------------------------------------------------------------------- */
+
+
+
+global.isDev = process.env.NODE_ENV === 'dev'
+
+
+ 
 // Log errors
 process.on('uncaughtException', (err) => {
    logger.error('Uncaught Exception:', err);
@@ -47,15 +59,25 @@ app.post('/stripe-webhook',express.raw({ type: 'application/json'}),stripe_webho
 /* -------------------------------------------------------------------------- */
 
 
+
 app.use(express.json());
 app.use(cookieParser());
-app.use(express.static('shared'));
-app.use('/assets',express.static(path.join(process.cwd(), 'src','application','assets')));
-app.use('/loaded_scripts',express.static(path.join(process.cwd(), 'src','application','ui','scripts')));
-app.use('/loaded_styles',express.static(path.join(process.cwd(), 'src','application','ui','styles')));
+app.use('/assets', express.static(path.join(process.cwd(), 'dist', 'assets')));
+app.use(express.static('dist'));
+app.use(express.static('static'));
 
 
-/* -------------------------------------------------------------------------- */
+
+
+
+
+
+// Serve the Vite-built files in production
+ 
+
+
+
+
 
 /*  */
 app.use('/public', public_routes)
